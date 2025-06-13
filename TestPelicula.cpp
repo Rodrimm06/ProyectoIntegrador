@@ -37,5 +37,5 @@ TEST(PeliculaTest4, ProbarMetodoMostrar){
 	"Genero: " << p.getGenero() << std::endl <<
 	"ID: " << p.getId() << std::endl <<
 	"Calificacion Promedio: " << p.calcularPromedio() << std::endl;
-    EXPECT_EQ(flujo.str(), esperado);
+    EXPECT_EQ(flujo.str(), esperado.str());
 }
