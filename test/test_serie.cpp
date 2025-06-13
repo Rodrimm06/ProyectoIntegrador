@@ -57,10 +57,16 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
              << "Calificacion Promedio: " << s.calcularPromedio() << std::endl
              << "Episodios:" << std::endl;
 
-    for (const auto& episodio : s.getEpisodios()) {
-        esperado << "  Titulo: " << episodio.getNombre() << std::endl;
-        esperado << "  Temporada: " << episodio.getTemporada() << std::endl;
+    for (int i = 0; i < s.getEpisodios().size(); i++) {
+        const auto& episodio = s.getEpisodios()[i];
+        esperado << "Episodio: " << episodio.getNombre() << std::endl
+                << "Temporada: " << episodio.getTemporada() << std::endl
+                << "Calificacion Promedio: " << episodio.calcularPromedio() << std::endl;
     }
+
+    EXPECT_EQ(buffer.str(), esperado.str());
+}
+
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
