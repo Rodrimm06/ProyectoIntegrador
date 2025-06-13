@@ -19,7 +19,7 @@ public:
 	// Sobrecarga de operador para mayor eficiencia
 	friend std::ostream& operator<<(std::ostream& os, const Episodio& episodio);
 	// Getters episodio
-  	std::string getTitulo() const { return titulo; }
+  	std::string getNombre() const { return nombre; }
    	int getTemporada() const { return temporada; }
 
 
