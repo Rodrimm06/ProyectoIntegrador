@@ -39,3 +39,12 @@ TEST(PeliculaTest4, ProbarMetodoMostrar){
 	"Calificacion Promedio: " << p.calcularPromedio() << std::endl;
     EXPECT_EQ(flujo.str(), esperado.str());
 }
+
+TEST(PeliculaTest5, ProbarErrorDelConstructor){
+	EXPECT_THROW({Pelicula p(9224,"El animalito", -12,"Misterio")}, const char*);
+}
+
+TEST(PeliculaTest6, ProbarErrorGenero){
+	EXPECT_THROW({Pelicula p(9224,"El juguete bailarin", 93,"Niños")}, const char*);
+}
+
