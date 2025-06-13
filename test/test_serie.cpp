@@ -12,7 +12,7 @@ TEST(SerieTest1, ConstructorYSetGet)
 
 TEST(SerieTest2, ProbarCalcularPromedio)
 {
-    Serie s(1432, "Historias de terror", 100, "Terror");
+    Serie s(1432, "Historias de terror", 100, "Misterio");
     Episodio e1("Intro", 1);
     Episodio e2("Final", 2);
     e1.agregarCalificacion(5);
@@ -28,7 +28,7 @@ TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
 }
 
 TEST(SerieTest4, ProbarMetodoMostrar) {
-    Serie s(1001, "Cosas extrañas", 45, "Suspenso");
+    Serie s(1001, "Cosas extrañas", 45, "Misterio");
 
     Episodio e1("El principio", 1);
     e1.agregarCalificacion(4);
