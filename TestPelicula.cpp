@@ -4,7 +4,7 @@
 TEST(PeliculaTest1, ConstructorYSetGet)
 {
 Pelicula p(11182,"El cardenal",159,"Drama");
-    EXPECT_EQ(p.getTitulo(), "El cardenal");
+    EXPECT_EQ(p.getNombre(), "El cardenal");
     EXPECT_EQ(p.getDuracion(), 159);
     EXPECT_EQ(p.getGenero(), "Drama");
     
