@@ -48,9 +48,8 @@ TEST(SerieTest4, ProbarMetodoMostrar){
              << "ID: " << s.getId() << std::endl
              << "Calificacion Promedio: " << s.calcularPromedio() << std::endl;
 
-    // Suponiendo que Episodio tiene operador << sobrecargado:
-    for (int i = 0; i < s.getCantidadEpisodios(); i++) {
-        esperado << s.getEpisodio(i); // O el método que uses para obtener episodios
+    for (int i = 0; i < size(s.episodios()); i++) {
+        esperado << s.episodios(i);
     }
 
     EXPECT_EQ(flujo.str(), esperado.str());
