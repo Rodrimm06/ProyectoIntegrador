@@ -4,11 +4,10 @@
 
 TEST(SerieTest1, ConstructorYSetGet)
 {
-Serie s(11182,"Historias de noche",2098,"Misterio");
+    Serie s(11182,"Historias de noche",2098,"Misterio");
     EXPECT_EQ(s.getNombre(), "Historias de noche");
     EXPECT_EQ(s.getDuracion(), 2098);
     EXPECT_EQ(s.getGenero(), "Misterio");
-    
 }
 
 TEST(SerieTest2, ProbarCalcularPromedio)
@@ -22,7 +21,6 @@ TEST(SerieTest2, ProbarCalcularPromedio)
     s.agregarEpisodio(e2);
     EXPECT_EQ(s.calcularPromedio(), 4); // (5 + 3) / 2
 }
-
 
 TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
     Serie s(1432,"Sin ti", 200, "Drama");
@@ -38,8 +36,12 @@ TEST(SerieTest4, ProbarMetodoMostrar){
     s.agregarEpisodio(e1);
     s.agregarEpisodio(e2);
 
-    std::stringstream flujo;
-    s.mostrar(flujo);
+    std::stringstream buffer;
+    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
+
+    s.mostrar();
+
+    std::cout.rdbuf(oldCout);  // restaurar cout
 
     std::stringstream esperado;
     esperado << "Serie: " << s.getNombre() << std::endl
@@ -48,37 +50,43 @@ TEST(SerieTest4, ProbarMetodoMostrar){
              << "ID: " << s.getId() << std::endl
              << "Calificacion Promedio: " << s.calcularPromedio() << std::endl;
 
-    for (int i = 0; i < size(s.episodios()); i++) {
-        esperado << s.episodios(i);
+    for (int i = 0; i < s.episodios().size(); i++) {
+        std::stringstream ssEpisodio;
+        s.episodios()[i].mostrar(ssEpisodio); 
+        esperado << ssEpisodio.str();
     }
 
-    EXPECT_EQ(flujo.str(), esperado.str());
+    EXPECT_EQ(buffer.str(), esperado.str());
 }
 
-
-TEST(SerieTest5, ProbarErrorDelConstructor){
-	EXPECT_THROW({Serie s(9224,"Los misterios de Albert", -12,"Misterio")}, const char*);
+TEST(SerieTest5, ProbarErrorDelConstructor)
+{
+    EXPECT_THROW(Serie s(9224,"Los misterios de Albert", -12,"Misterio"), const char*);
 }
 
-TEST(SerieTest6, ProbarErrorGenero){
-	EXPECT_THROW({Serie s(9224,"Los policias", 93,"Crimen")}, const char*);
+TEST(SerieTest6, ProbarErrorGenero)
+{
+    EXPECT_THROW(Serie s(9224,"Los policias", 93,"Crimen"), const char*);
 }
 
-TEST(SerieTest7, ProbarAgregarEpisodio){
-		Serie s(5522,"La granja",108,"Misterio");
-		Episodio e("El puerco",1);
+TEST(SerieTest7, ProbarAgregarEpisodio)
+{
+    Serie s(5522,"La granja",108,"Misterio");
+    Episodio e("El puerco",1);
     e.agregarCalificacion(3);
     s.agregarEpisodio(e);
     EXPECT_EQ(s.calcularPromedio(),3);
-	}
-TEST(SerieTest8, ProbarGetSet){
-		Serie s(5522,"La granja",108,"Misterio");
-		s.setNombre("La cabaña");
-		s.setDuracion(20);
-		s.setGenero("Drama");
-		s.setId(144);
-		EXPECT_EQ(s.getNombre(),"La cabaña");
-		EXPECT_EQ(s.getDuracion(),20);
-		EXPECT_EQ(s.getGenero(),"Drama");
-		EXPECT_EQ(s.getId(),144);
-	}
+}
+
+TEST(SerieTest8, ProbarGetSet)
+{
+    Serie s(5522,"La granja",108,"Misterio");
+    s.setNombre("La cabaña");
+    s.setDuracion(20);
+    s.setGenero("Drama");
+    s.setId(144);
+    EXPECT_EQ(s.getNombre(),"La cabaña");
+    EXPECT_EQ(s.getDuracion(),20);
+    EXPECT_EQ(s.getGenero(),"Drama");
+    EXPECT_EQ(s.getId(),144);
+}
