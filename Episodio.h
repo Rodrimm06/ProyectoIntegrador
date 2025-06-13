@@ -18,6 +18,10 @@ public:
 	void agregarCalificacion(int cali);
 	// Sobrecarga de operador para mayor eficiencia
 	friend std::ostream& operator<<(std::ostream& os, const Episodio& episodio);
+	// Getters episodio
+  	std::string getTitulo() const { return titulo; }
+   	int getTemporada() const { return temporada; }
+
 
 };
 
