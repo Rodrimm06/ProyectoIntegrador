@@ -43,10 +43,10 @@ void Serie::mostrar() const {
 }
 // Sobrecarga de operador para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Serie& serie) {
-	os << "Serie: " << serie.nombre << std::endl
-		<< "Duracion: " << serie.duracion << std::endl
-		<< "Genero: " << serie.genero << std::endl
-		<< "ID: " << serie.id << std::endl
+	os << "Serie: " << serie.getNombre() << std::endl
+		<< "Duracion: " << serie.getDuracion() << std::endl
+		<< "Genero: " << serie.getGenero() << std::endl
+		<< "ID: " << serie.getId() << std::endl
 		<< "Calificacion Promedio: " << serie.calcularPromedio() << std::endl;
 	// Se recorre el vector de episodios y se guarda cada uno
 	for (int i = 0;i < size(serie.episodios);i++) {
