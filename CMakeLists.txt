@@ -15,7 +15,7 @@ include_directories(${CMAKE_SOURCE_DIR})
 set(SOURCES
         streamingMain.cpp
         Episodio.cpp
-        Episodio.H
+        Episodio.h
         Video.cpp
         Video.h
         Serie.cpp
