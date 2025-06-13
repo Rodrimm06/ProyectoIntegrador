@@ -29,10 +29,13 @@ TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
 
 TEST(SerieTest4, ProbarMetodoMostrar) {
     Serie s(1001, "Cosas extrañas", 45, "Suspenso");
-
-    s.agregarEpisodio(Episodio("El principio", 1));
-    s.agregarEpisodio(Episodio("El medio", 2));
-    s.agregarEpisodio(Episodio("El final", 3));
+    Episodio e1("El principio", 1);
+    e1.agregarCalificacion(4);
+    Episodio e2("El medio", 2);
+    e2.agregarCalificacion(5);
+    s.agregarEpisodio(e1);
+    s.agregarEpisodio(e2);
+    
 
     std::stringstream buffer;
     std::streambuf* originalCout = std::cout.rdbuf();
