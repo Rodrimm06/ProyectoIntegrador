@@ -3,9 +3,10 @@
 
 TEST(Pelicula, ConstructorYSetGet)
 {
-Pelicula::(std
-
-EXPECT_EQ(result, 3);
+Pelicula p("El cardenal",159,"Drama")
+    EXPECT_EQ(p.getTitulo(), "El cardenal");
+    EXPECT_EQ(p.getDuracion(), 159);
+    EXPECT_EQ(p.getGenero(), "Drama");
 }
 
 TEST(DivTest, HandlesZeroInput)
