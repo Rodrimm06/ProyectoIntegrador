@@ -64,7 +64,7 @@ TEST(SerieTest6, ProbarErrorGenero){
 	EXPECT_THROW({Serie s(9224,"Los policias", 93,"Crimen")}, const char*);
 }
 
-TEST(SerieTest7, ProbarAgregrarEpisodio){
+TEST(SerieTest7, ProbarAgregarEpisodio){
 		Serie s(5522,"La granja",108,"Misterio");
 		Episodio e("El puerco",1);
     e.agregarCalificacion(3);
