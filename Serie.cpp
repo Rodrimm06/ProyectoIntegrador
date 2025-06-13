@@ -31,15 +31,18 @@ double Serie::calcularPromedio() const{
 }
 // Funcion de mostrar
 void Serie::mostrar() const {
-	std::cout << "Serie: " << getNombre() << std::endl
-		<< "Duracion: " << getDuracion() << std::endl <<
-		"Genero: " << getGenero() << std::endl <<
-		"ID: " << getId() << std::endl <<
-		"Calificacion Promedio: " << calcularPromedio() << std::endl
-		<< "Episodios: " << std::endl;
-	for (int i = 0;i < size(episodios);i++) {
-		std::cout << episodios[i];
-	}
+    std::cout << "Serie: " << getNombre() << std::endl
+              << "Duracion: " << getDuracion() << std::endl
+              << "Genero: " << getGenero() << std::endl
+              << "ID: " << getId() << std::endl;
+    if (episodios.empty()) {
+        throw "No hay episodios para calcular promedio";
+    }
+    std::cout << "Calificacion Promedio: " << calcularPromedio() << std::endl;
+    std::cout << "Episodios: " << std::endl;
+    for (const auto& ep : episodios) {
+        std::cout << ep;
+    }
 }
 // Sobrecarga de operador para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Serie& serie) {
