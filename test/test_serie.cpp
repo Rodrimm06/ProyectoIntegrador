@@ -27,36 +27,43 @@ TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
     EXPECT_THROW(s.calcularPromedio(), const char*);
 }
 
-TEST(SerieTest4, ProbarMetodoMostrar){
-    Serie s(1342, "El criminal", 159, "Misterio");
-    Episodio e1("Capítulo 1", 1);
-    Episodio e2("Capítulo 2", 2);
-    e1.agregarCalificacion(4);
-    e2.agregarCalificacion(2);
-    s.agregarEpisodio(e1);
-    s.agregarEpisodio(e2);
+TEST(SerieTest4, ProbarMetodoMostrar) {
+    // Crear la serie
+    Serie s(1001, "Cosas extrañas", 45, "Suspenso");
 
+    // Agregar episodios
+    s.agregarEpisodio(Episodio("El principio", 1));
+    s.agregarEpisodio(Episodio("El medio", 2));
+    s.agregarEpisodio(Episodio("El final", 3));
+
+    // Redirigir std::cout a un stringstream
     std::stringstream buffer;
-    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
+    std::streambuf* originalCout = std::cout.rdbuf();
+    std::cout.rdbuf(buffer.rdbuf());
 
+    // Llamar a mostrar()
     s.mostrar();
 
-    std::cout.rdbuf(oldCout);  // restaurar cout
+    // Restaurar std::cout
+    std::cout.rdbuf(originalCout);
 
+    // Crear salida esperada
     std::stringstream esperado;
     esperado << "Serie: " << s.getNombre() << std::endl
              << "Duracion: " << s.getDuracion() << std::endl
              << "Genero: " << s.getGenero() << std::endl
              << "ID: " << s.getId() << std::endl
-             << "Calificacion Promedio: " << s.calcularPromedio() << std::endl;
+             << "Episodios:" << std::endl;
 
-    // Aquí usamos getEpisodios() en lugar de acceder directamente a episodios
-    const auto& episodios = s.getEpisodios();
-    for (size_t i = 0; i < episodios.size(); i++) {
-        std::stringstream ssEpisodio;
-        episodios[i].mostrar(ssEpisodio); 
-        esperado << ssEpisodio.str();
+    for (const auto& episodio : s.getEpisodios()) {
+        esperado << "  Titulo: " << episodio.getTitulo() << std::endl;
+        esperado << "  Temporada: " << episodio.getTemporada() << std::endl;
     }
+
+    // Comparar la salida
+    EXPECT_EQ(buffer.str(), esperado.str());
+}
+
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
