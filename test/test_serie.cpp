@@ -29,13 +29,17 @@ TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
 
 TEST(SerieTest4, ProbarMetodoMostrar) {
     Serie s(1001, "Cosas extrañas", 45, "Suspenso");
+
     Episodio e1("El principio", 1);
     e1.agregarCalificacion(4);
     Episodio e2("El medio", 2);
     e2.agregarCalificacion(5);
+    Episodio e3("El final", 3);
+    e3.agregarCalificacion(3);
+
     s.agregarEpisodio(e1);
     s.agregarEpisodio(e2);
-    
+    s.agregarEpisodio(e3);
 
     std::stringstream buffer;
     std::streambuf* originalCout = std::cout.rdbuf();
@@ -50,6 +54,7 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
              << "Duracion: " << s.getDuracion() << std::endl
              << "Genero: " << s.getGenero() << std::endl
              << "ID: " << s.getId() << std::endl
+             << "Calificacion Promedio: " << s.calcularPromedio() << std::endl
              << "Episodios:" << std::endl;
 
     for (const auto& episodio : s.getEpisodios()) {
@@ -59,6 +64,7 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
+
 
 
 TEST(SerieTest5, ProbarErrorDelConstructor)
