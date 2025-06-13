@@ -58,9 +58,6 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
 }
 
 
-    EXPECT_EQ(buffer.str(), esperado.str());
-}
-
 TEST(SerieTest5, ProbarErrorDelConstructor)
 {
     EXPECT_THROW(Serie s(9224,"Los misterios de Albert", -12,"Misterio"), const char*);
