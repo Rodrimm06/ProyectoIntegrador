@@ -36,7 +36,7 @@ TEST(EpisodioTest4, ProbarMetodoMostrar){
     EXPECT_EQ(flujo.str(), esperado.str());
 }
 
-TEST(EpisodioTest5, ProbarAgregrarCalificacionErronea){
+TEST(EpisodioTest5, ProbarAgregarCalificacionErronea){
 		Episodio e("Jamaica",3);
 		EXPECT_THROW(e.agregarCalificacion(-23),const char*);
 	}
