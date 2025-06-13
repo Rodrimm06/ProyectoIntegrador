@@ -50,7 +50,7 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
              << "Episodios:" << std::endl;
 
     for (const auto& episodio : s.getEpisodios()) {
-        esperado << "  Titulo: " << episodio.getTitulo() << std::endl;
+        esperado << "  Titulo: " << episodio.getNombre() << std::endl;
         esperado << "  Temporada: " << episodio.getTemporada() << std::endl;
     }
 
