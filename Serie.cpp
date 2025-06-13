@@ -46,14 +46,18 @@ void Serie::mostrar() const {
 }
 // Sobrecarga de operador para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Serie& serie) {
-	os << "Serie: " << serie.getNombre() << std::endl
-		<< "Duracion: " << serie.getDuracion() << std::endl
-		<< "Genero: " << serie.getGenero() << std::endl
-		<< "ID: " << serie.getId() << std::endl
-		<< "Calificacion Promedio: " << serie.calcularPromedio() << std::endl;
-	// Se recorre el vector de episodios y se guarda cada uno
-	for (int i = 0;i < size(serie.episodios);i++) {
-		os <<"Episodio "<<i+1<<std::endl<< serie.episodios[i];
-	}
-	return os;
+    os << "Serie: " << serie.getNombre() << std::endl
+       << "Duracion: " << serie.getDuracion() << std::endl
+       << "Genero: " << serie.getGenero() << std::endl
+       << "ID: " << serie.getId() << std::endl;
+    if (serie.getEpisodios().empty()) {
+        throw "No se puede calcular promedio: no hay episodios.";
+    }
+    os << "Calificacion Promedio: " << serie.calcularPromedio() << std::endl;
+    os << "Episodios:" << std::endl;
+    for (const auto& episodio : serie.getEpisodios()) {
+        os << episodio;
+    }
+    return os;
 }
+
