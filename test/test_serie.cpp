@@ -28,26 +28,20 @@ TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
 }
 
 TEST(SerieTest4, ProbarMetodoMostrar) {
-    // Crear la serie
     Serie s(1001, "Cosas extrañas", 45, "Suspenso");
 
-    // Agregar episodios
     s.agregarEpisodio(Episodio("El principio", 1));
     s.agregarEpisodio(Episodio("El medio", 2));
     s.agregarEpisodio(Episodio("El final", 3));
 
-    // Redirigir std::cout a un stringstream
     std::stringstream buffer;
     std::streambuf* originalCout = std::cout.rdbuf();
     std::cout.rdbuf(buffer.rdbuf());
 
-    // Llamar a mostrar()
     s.mostrar();
 
-    // Restaurar std::cout
     std::cout.rdbuf(originalCout);
 
-    // Crear salida esperada
     std::stringstream esperado;
     esperado << "Serie: " << s.getNombre() << std::endl
              << "Duracion: " << s.getDuracion() << std::endl
@@ -60,7 +54,6 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
         esperado << "  Temporada: " << episodio.getTemporada() << std::endl;
     }
 
-    // Comparar la salida
     EXPECT_EQ(buffer.str(), esperado.str());
 }
 
