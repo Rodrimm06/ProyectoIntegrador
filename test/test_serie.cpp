@@ -50,9 +50,11 @@ TEST(SerieTest4, ProbarMetodoMostrar){
              << "ID: " << s.getId() << std::endl
              << "Calificacion Promedio: " << s.calcularPromedio() << std::endl;
 
-    for (int i = 0; i < s.episodios().size(); i++) {
+    // Aquí usamos getEpisodios() en lugar de acceder directamente a episodios
+    const auto& episodios = s.getEpisodios();
+    for (size_t i = 0; i < episodios.size(); i++) {
         std::stringstream ssEpisodio;
-        s.episodios()[i].mostrar(ssEpisodio); 
+        episodios[i].mostrar(ssEpisodio); 
         esperado << ssEpisodio.str();
     }
 
@@ -90,3 +92,4 @@ TEST(SerieTest8, ProbarGetSet)
     EXPECT_EQ(s.getGenero(),"Drama");
     EXPECT_EQ(s.getId(),144);
 }
+
