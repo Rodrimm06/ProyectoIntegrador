@@ -41,7 +41,7 @@ TEST(PeliculaTest4, ProbarMetodoMostrar){
 }
 
 TEST(PeliculaTest5, ProbarErrorDelConstructor){
-	EXPECT_THROW({Pelicula p(9224,"El animalito", -12,"Misterio")}, const char*);
+	EXPECT_THROW(Pelicula p(9224,"El animalito", -12,"Misterio"), const char*);
 }
 
 TEST(PeliculaTest6, ProbarErrorGenero){
