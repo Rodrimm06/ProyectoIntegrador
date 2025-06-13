@@ -47,4 +47,18 @@ TEST(PeliculaTest5, ProbarErrorDelConstructor){
 TEST(PeliculaTest6, ProbarErrorGenero){
 	EXPECT_THROW({Pelicula p(9224,"El juguete bailarin", 93,"Niños")}, const char*);
 }
-
+TEST(PeliculaTest7, ProbarAgregrarCalificacionErronea){
+		Pelicula p(5522,"La granja",108,"Misterio");
+		EXPECT_THROW(p.agregarCalificacion(-23),const char*);
+	}
+TEST(PeliculaTest8, ProbarGetSet){
+		Pelicula p(5522,"La granja",108,"Misterio");
+		p.setNombre("El campo");
+		p.setDuracion(200);
+		p.setGenero("Drama");
+		p.setId(1244);
+		EXPECT_EQ(p.getNombre(),"El campo");
+		EXPECT_EQ(p.getDuracion(),200);
+		EXPECT_EQ(p.getGenero(),"Drama");
+		EXPECT_EQ(p.getId(),1244);
+	}
