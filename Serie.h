@@ -18,5 +18,8 @@ public:
 	double calcularPromedio() const override;
 	// Sobrecarga de operador para mayor eficiencia
 	friend std::ostream& operator<<(std::ostream& os, const Serie& serie);
+	// Funcion para obtener episodio
+        const std::vector<Episodio>& getEpisodios() const { return episodios; }
+
 };
 
