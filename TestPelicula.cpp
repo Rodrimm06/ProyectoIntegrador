@@ -31,7 +31,7 @@ TEST(PeliculaTest4, ProbarMetodoMostrar){
 
     p.mostrar(flujo);
 
-    std::string esperado;
+    std::stringstream esperado;
     esperado<<"Pelicula: " << p.getNombre() << std::endl <<
 	"Duracion: " << p.getDuracion() << std::endl <<
 	"Genero: " << p.getGenero() << std::endl <<
