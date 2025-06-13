@@ -11,21 +11,19 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Incluir los archivos de cabecera
 include_directories(${CMAKE_SOURCE_DIR})
 
-# Archivos fuente principales
-set(SOURCES
-        streamingMain.cpp
+# Archivos fuente comunes (implementación)
+set(SOURCES_COMMON
         Episodio.cpp
-        Episodio.h
         Video.cpp
-        Video.h
         Serie.cpp
-        Serie.h
         Pelicula.cpp
-        Pelicula.h
 )
 
 # Crear el ejecutable principal
-add_executable(main ${SOURCES})
+add_executable(main
+        streamingMain.cpp
+        ${SOURCES_COMMON}
+)
 
 # Opciones
 option(ENABLE_TESTING "Enable a Unit Testing build." ON)
@@ -51,8 +49,8 @@ FetchContent_MakeAvailable(googletest)
 if(ENABLE_TESTING)
     enable_testing()
 
-    function(add_test_executable name source)
-        add_executable(${name} ${source})
+    function(add_test_executable name test_source)
+        add_executable(${name} ${test_source} ${SOURCES_COMMON})
         target_link_libraries(${name} PRIVATE gtest gtest_main)
         if (ENABLE_COVERAGE)
             target_link_libraries(${name} PRIVATE gcov)
