@@ -1,3 +1,11 @@
+
+/*
+ * Copyright (C) 2025 Tec de Monterrey
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 #pragma once
 #include <iostream>
 #include <vector>
@@ -6,7 +14,7 @@ class Video
 {
 protected:
 	/* Se declaran todos los atributos de la clase base video en protected para que sus clases hijas
-	puedan acceder también
+	puedan acceder tambiÃ©n
 	*/
 	int id;
 	std::string nombre;
