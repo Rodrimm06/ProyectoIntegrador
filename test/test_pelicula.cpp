@@ -25,19 +25,27 @@ TEST(PeliculaTest3, PromedioSinCalificacionesLanzaExcepcion) {
     EXPECT_THROW(p.calcularPromedio(), const char*);
 }
 
-TEST(PeliculaTest4, ProbarMetodoMostrar){
-    Pelicula p(1342,"El cardenal",159,"Drama");
-    std::stringstream flujo;
+TEST(PeliculaTest4, ProbarMetodoMostrar) {
+    Pelicula p(1342, "El cardenal", 159, "Drama");
+    // Agregar calificaciones
+    p.agregarCalificacion(4);
+    p.agregarCalificacion(5);
 
-    p.mostrar(flujo);
+    std::stringstream buffer;
+    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
+
+    p.mostrar(); 
+
+    std::cout.rdbuf(oldCout);
 
     std::stringstream esperado;
-    esperado<<"Pelicula: " << p.getNombre() << std::endl <<
-	"Duracion: " << p.getDuracion() << std::endl <<
-	"Genero: " << p.getGenero() << std::endl <<
-	"ID: " << p.getId() << std::endl <<
-	"Calificacion Promedio: " << p.calcularPromedio() << std::endl;
-    EXPECT_EQ(flujo.str(), esperado.str());
+    esperado << "Pelicula: " << p.getNombre() << std::endl
+             << "Duracion: " << p.getDuracion() << std::endl
+             << "Genero: " << p.getGenero() << std::endl
+             << "ID: " << p.getId() << std::endl
+             << "Calificacion Promedio: " << p.calcularPromedio() << std::endl;
+
+    EXPECT_EQ(buffer.str(), esperado.str());
 }
 
 TEST(PeliculaTest5, ProbarErrorDelConstructor){
