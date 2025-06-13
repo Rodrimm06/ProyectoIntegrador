@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
-#include "div.h"
+#include "Pelicula.h"
 
-TEST(DivTest, HandlesPositiveInput)
+TEST(Pelicula, ConstructorYSetGet)
 {
-int result = divide(9, 3);
+Pelicula::(std
 
 EXPECT_EQ(result, 3);
 }
