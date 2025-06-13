@@ -45,7 +45,7 @@ TEST(PeliculaTest5, ProbarErrorDelConstructor){
 }
 
 TEST(PeliculaTest6, ProbarErrorGenero){
-	EXPECT_THROW({Pelicula p(9224,"El juguete bailarin", 93,"Niños")}, const char*);
+	EXPECT_THROW(Pelicula p(9224,"El juguete bailarin", 93,"Niños"), const char*);
 }
 TEST(PeliculaTest7, ProbarAgregrarCalificacionErronea){
 		Pelicula p(5522,"La granja",108,"Misterio");
