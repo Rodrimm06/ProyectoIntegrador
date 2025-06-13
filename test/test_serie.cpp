@@ -68,9 +68,6 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
 }
 
 
-    EXPECT_EQ(buffer.str(), esperado.str());
-}
-
 
 
 TEST(SerieTest5, ProbarErrorDelConstructor)
