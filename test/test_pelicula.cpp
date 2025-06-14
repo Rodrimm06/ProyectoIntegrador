@@ -85,17 +85,7 @@ TEST(PeliculaTest10, AgregarCalificacionesEnLimites) {
 
 TEST(PeliculaTest11, MostrarSinCalificaciones) {
     Pelicula p(5678, "Sin Calif", 120, "Drama");
-
-    std::stringstream buffer;
-    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
-
-    p.Mostrar();
-
-    std::cout.rdbuf(oldCout);
-
-    std::string salida = buffer.str();
-    EXPECT_NE(salida.find("Pelicula:"), std::string::npos);
-    // Aquí también puedes verificar si muestra "Calificacion Promedio: 0" o maneja excepción
+   EXPECTED_THROW(p.Mostrar(),const char*);
 }
 
 TEST(PeliculaTest12, MultiplesCalificaciones) {
