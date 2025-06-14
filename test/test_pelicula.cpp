@@ -85,7 +85,7 @@ TEST(PeliculaTest10, AgregarCalificacionesEnLimites) {
 
 TEST(PeliculaTest11, MostrarSinCalificaciones) {
     Pelicula p(5678, "Sin Calif", 120, "Drama");
-   EXPECTED_THROW(p.Mostrar(),const char*);
+   EXPECT_THROW(p.Mostrar(),const char*);
 }
 
 TEST(PeliculaTest12, MultiplesCalificaciones) {
