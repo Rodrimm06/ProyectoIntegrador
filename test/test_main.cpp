@@ -288,7 +288,7 @@ TEST(MainTest12, CalcularPromedioSinCalificacionesLanzaError_Serie) {
 
 TEST(MainTest13, EpisodioMostrarSinCalificacionesLanzaError) {
     Episodio ep("Episodio sin calif", 1);
-    EXPECT_THROW(ep.Mostrar(), const char*);
+    EXPECT_THROW(ep.MostrarEpisodio(), const char*);
 }
 
 TEST(MainTest14, EpisodioCalcularPromedioSinCalificacionesLanzaError) {
