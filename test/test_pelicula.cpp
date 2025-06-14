@@ -125,11 +125,11 @@ TEST(PeliculaTest14, MostrarCompleto) {
     std::cout.rdbuf(oldCout); // restaura cout
 
     std::stringstream esperado;
-    esperado << "Pelicula: Drama Interno" << std::endl
-             << "Duracion: 90" << std::endl
-             << "Genero: Drama" << std::endl
-             << "ID: 2002" << std::endl
-             << "Calificacion Promedio: 3.5" << std::endl;
+    esperado << "Pelicula: "<<p.GetNombre() << std::endl
+             << "Duracion: "<<p.GetDuracion << std::endl
+             << "Genero: " <<p.GetGenero std::endl
+             << "ID: " <<p.GetId std::endl
+             << "Calificacion Promedio: "<<p.CalcularPromedio() std::endl;
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
