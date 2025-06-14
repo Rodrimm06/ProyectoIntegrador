@@ -47,7 +47,7 @@ TEST(EpisodioTest5, ProbarAgregarCalificacionErronea){
 }
 TEST(EpisodioTest6, CalcularPromedioSinCalificacionesLanzaError) {
     Episodio ep("Pilot", 1);
-    EXPECT_THROW(ep.calcularPromedioEpisodio(), const char*);
+    EXPECT_THROW(ep.CalcularPromedioEpisodio(), const char*);
 }
 
 TEST(EpisodioTest7, CalcularPromedioConCalificaciones) {
