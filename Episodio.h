@@ -16,8 +16,17 @@ Esta clase esta diseñada para ser un episodio cualquiera de una serie
 class Episodio
 {
 private:
+    /** 
+    Nombre del episodio
+    */
     std::string nombre;
+    /** 
+    Temporada a la que pertenece
+    */
     int temporada;
+    /** 
+    Vector de calificaciones
+    */
     std::vector<int> calificaciones;
 public:
     /** 
