@@ -18,7 +18,7 @@ Episodio::Episodio(const std::string& nombre_, int temporada_) :
 // Se hace la funcion mostrar para ver la informacion de cada episodio
 void Episodio::MostrarEpisodio() const {
     std::cout << "Episodio: " << std::endl << "Nombre: " << nombre << std::endl <<
-        "Temporada: " << temporada << std::endl << "Calificacion Promedio: " << calcularPromedioEpisodio() << std::endl;
+        "Temporada: " << temporada << std::endl << "Calificacion Promedio: " << CalcularPromedioEpisodio() << std::endl;
 }
 // Funcion para agregar una calificacion al vector de calificaciones
 void Episodio::AgregarCalificacionEpisodio(int cali) {
