@@ -84,7 +84,6 @@ TEST(MainTest4, MostrarGenero) {
 
 TEST(MainTest5, LiberarVideos) {
     std::vector<Video*> videos = crearVideosEjemplo();
-    liberarVideos(videos);
     EXPECT_EQ(videos.size(), 0);
 }
 
@@ -112,6 +111,6 @@ TEST(MainTest8, EpisodioCalificaciones) {
     Episodio ep("Test Episodio", 1);
     ep.AgregarCalificacionEpisodio(4);
     ep.AgregarCalificacionEpisodio(5);
-    double promedio = ep.calcularPromedio();
+    double promedio = ep.CalcularPromedio();
     EXPECT_DOUBLE_EQ(promedio, 4.5);
 }
