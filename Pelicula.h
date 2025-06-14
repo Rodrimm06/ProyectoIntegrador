@@ -9,6 +9,10 @@
 
 #pragma once
 #include "Video.h"
+/**
+Esta clase simula ser un video dentro de una plataforma de streaming
+Es una clase abstracta
+*/
 class Pelicula: public Video
 {
 public:
