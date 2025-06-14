@@ -103,8 +103,9 @@ TEST(SerieTest8, ProbarGetSet)
 }
 
 TEST(SerieTest9, ProbarOperadorStreamOut) {
-    Serie s(9876, "Ciencia Extrema", 60, "Documental");
-
+    Serie s(9876, "Supervivencia en el artico", 60, "Misterio");
+    Episodio e("Piloto",1)
+    e.AgregarCalificacionEpisodio(3)
     std::stringstream buffer;
     buffer << s;  // Aquí se usa operator<<
 
