@@ -34,7 +34,7 @@ double Serie::calcularPromedio() const {
     double promedio = 0;
     int contador = 0;
     for (int i = 0; i < (int)episodios.size(); i++) {
-        double epPromedio = episodios[i].calcularPromedio();
+        double epPromedio = episodios[i].calcularPromedioEpisodio();
         promedio += epPromedio;
         contador++;
     }
