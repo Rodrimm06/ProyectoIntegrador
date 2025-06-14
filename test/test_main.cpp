@@ -262,6 +262,7 @@ TEST(MainTest8, EpisodioCalificaciones) {
     Episodio ep("Test Episodio", 1);
     ep.AgregarCalificacionEpisodio(4);
     ep.AgregarCalificacionEpisodio(5);
-    double promedio = ep.CalcularPromedio();
+    double promedio = ep.CalcularPromedioEpisodio(); 
     EXPECT_DOUBLE_EQ(promedio, 4.5);
 }
+
