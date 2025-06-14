@@ -42,15 +42,15 @@ public:
 	/** 
         Funcion para agregar una calificacion
         */
-	void virtual agregarCalificacion(int cali);
+	void virtual AgregarCalificacion(int cali);
         /** 
         Funcion puramente virtual para que se convierta en una clase abstracta
         */
-	void virtual mostrar() const=0;
+	void virtual Mostrar() const=0;
         /** 
         Funcion para calcular el promedio
         */
-	double virtual calcularPromedio() const;
+	double virtual CalcularPromedio() const;
 
         /** 
         Destructor
@@ -60,33 +60,33 @@ public:
         /**
         Funcion set de ID
         */
-	void setId(int id_);
+	void SetId(int id_);
         /**
         Funcion set de nombre
         */
-	void setNombre(std::string nom);
+	void SetNombre(std::string nom);
         /**
         Funcion set de duracion
         */
-	void setDuracion(double dur);
+	void SetDuracion(double dur);
         /**
         Funcion set de genero
         */
-	void setGenero(std::string gen);
+	void SetGenero(std::string gen);
         /**
         Funcion get de ID
         */
-	int getId() const;
+	int GetId() const;
         /**
         Funcion get de nombre
         */
-	std::string getNombre() const;
+	std::string GetNombre() const;
         /**
         Funcion get de duracion
         */
-	double getDuracion() const;
+	double GetDuracion() const;
         /**
         Funcion get de genero
         */
-	std::string getGenero() const;
+	std::string GetGenero() const;
 };
