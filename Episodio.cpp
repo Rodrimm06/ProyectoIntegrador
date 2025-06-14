@@ -48,8 +48,6 @@ double Episodio::CalcularPromedioEpisodio() const {
 }
 // Se sobrecarga el operador para mayor comodidad y mas dinamismo
 std::ostream& operator<<(std::ostream& os, const Episodio& episodio) {
-    os << "Episodio: " << episodio.nombre << std::endl
-        << "Temporada: " << episodio.temporada << std::endl
-        << "Calificacion Promedio: " << episodio.CalcularPromedioEpisodio() << std::endl;
+    os << "Episodio: " << episodio.nombre << std::endl<< "Temporada: " << episodio.temporada << std::endl<< "Calificacion Promedio: " << episodio.CalcularPromedioEpisodio() << std::endl;
     return os;
 }
