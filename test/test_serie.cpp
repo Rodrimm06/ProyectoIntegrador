@@ -148,10 +148,10 @@ TEST(SerieTest12, OperadorStreamOutCompleto) {
 
     Episodio ep1("Inicio", 1);
     ep1.AgregarCalificacionEpisodio(4);
-    ep1.AgregarCalificacionEpisodio(5); // promedio 4.5
+    ep1.AgregarCalificacionEpisodio(5);
 
     Episodio ep2("Viaje", 2);
-    ep2.AgregarCalificacionEpisodio(3); // promedio 3.0
+    ep2.AgregarCalificacionEpisodio(3);
 
     serie.AgregarEpisodio(ep1);
     serie.AgregarEpisodio(ep2);
