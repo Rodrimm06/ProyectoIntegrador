@@ -66,8 +66,8 @@ std::ostream& operator<<(std::ostream& os, const Serie& serie) {
     os << "Calificacion Promedio: " << serie.CalcularPromedio() << std::endl;
     os << "Episodios:" << std::endl;
 
-    for (int i = 0; i < (int)serie.getEpisodios().size(); i++) {
-        os << serie.getEpisodios()[i];
+    for (int i = 0; i < (int)serie.GetEpisodios().size(); i++) {
+        os << serie.GetEpisodios()[i];
     }
     return os;
 }
