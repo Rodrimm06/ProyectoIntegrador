@@ -10,7 +10,7 @@
 #include <iostream>
 #include "Pelicula.h"
 #include "Serie.h"
-void mostrarPorGenero(const std::vector<Video*>& videos, const std::string& generoBuscado) {
+void MostrarPorGenero(const std::vector<Video*>& videos, const std::string& generoBuscado) {
     std::cout << "Videos del genero: " << generoBuscado << std::endl;
     for (int i = 0;i<size(videos);i++) {
         if (videos[i]->getGenero() == generoBuscado) {
@@ -28,8 +28,8 @@ int main()
 
         // Crear y agregar una película
         Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
-        peli->agregarCalificacion(5);
-        peli->agregarCalificacion(4);
+        peli->AgregarCalificacion(5);
+        peli->AgregarCalificacion(4);
         videos.push_back(peli);
 
         // Crear episodios para la serie
@@ -47,19 +47,19 @@ int main()
 
         // Crear una serie y agregar episodios
         Serie* serie = new Serie(2, "One drama story", 10.0, "Drama");
-        serie->agregarEpisodio(ep1);
-        serie->agregarEpisodio(ep2);
-        serie->agregarEpisodio(ep3);
+        serie->AgregarEpisodio(ep1);
+        serie->AgregarEpisodio(ep2);
+        serie->AgregarEpisodio(ep3);
 
         // También podemos agregar calificaciones directamente a la serie
-        serie->agregarCalificacion(5);
-        serie->agregarCalificacion(4);
+        serie->AgregarCalificacion(5);
+        serie->AgregarCalificacion(4);
 
         videos.push_back(serie);
 
         // Mostrar todos los videos usando polimorfismo
         for (Video* video : videos) {
-            video->mostrar();
+            video->Mostrar();
         }
 
         // Usar la sobrecarga de operador <<
@@ -74,7 +74,7 @@ int main()
         }
         //Probar funcion de mostrar por genero
         std::cout << std::endl;
-        mostrarPorGenero(videos, "Drama");
+        MostrarPorGenero(videos, "Drama");
         // Liberar memoria
         for (Video* video : videos) {
             delete video;
