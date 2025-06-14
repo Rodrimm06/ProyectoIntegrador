@@ -15,18 +15,18 @@ Pelicula::Pelicula(int id_, const std::string& nombre_, double duracion_,  const
 }
 // Funcion para mostrar informacion de la pelicula
 void Pelicula::mostrar() const {
-	std::cout << "Pelicula: " << getNombre() << std::endl <<
-		"Duracion: " << getDuracion() << std::endl <<
-		"Genero: " << getGenero() << std::endl <<
-		"ID: " << getId() << std::endl <<
-		"Calificacion Promedio: " << calcularPromedio() << std::endl;
+	std::cout << "Pelicula: " << GetNombre() << std::endl <<
+		"Duracion: " << GetDuracion() << std::endl <<
+		"Genero: " << GetGenero() << std::endl <<
+		"ID: " << GetId() << std::endl <<
+		"Calificacion Promedio: " << CalcularPromedio() << std::endl;
 }
 // Sobrecarga de operadores para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula) {
-	os << "Pelicula: " << pelicula.getNombre() << std::endl
-		<< "Duracion: " << pelicula.getDuracion() << std::endl
-		<< "Genero: " << pelicula.getGenero() << std::endl
-		<< "ID: " << pelicula.getId() << std::endl
-		<< "Calificacion Promedio: " << pelicula.calcularPromedio() << std::endl;
+	os << "Pelicula: " << pelicula.GetNombre() << std::endl
+		<< "Duracion: " << pelicula.GetDuracion() << std::endl
+		<< "Genero: " << pelicula.GetGenero() << std::endl
+		<< "ID: " << pelicula.GetId() << std::endl
+		<< "Calificacion Promedio: " << pelicula.CalcularPromedio() << std::endl;
 	return os;
 }
