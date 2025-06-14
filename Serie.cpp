@@ -53,7 +53,7 @@ void Serie::mostrar() const {
     std::cout << "Calificacion Promedio: " << calcularPromedio() << std::endl;
     std::cout << "Episodios:" << std::endl;
 
-    MostrarEpisodios();
+    mostrarEpisodios();
 }
 
 // Sobrecarga de operador para mayor eficiencia
