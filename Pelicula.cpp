@@ -14,7 +14,7 @@ Pelicula::Pelicula(int id_, const std::string& nombre_, double duracion_,  const
 	
 }
 // Funcion para mostrar informacion de la pelicula
-void Pelicula::mostrar() const {
+void Pelicula::	Mostrar() const {
 	std::cout << "Pelicula: " << GetNombre() << std::endl <<
 		"Duracion: " << GetDuracion() << std::endl <<
 		"Genero: " << GetGenero() << std::endl <<
