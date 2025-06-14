@@ -95,5 +95,43 @@ TEST(PeliculaTest12, MultiplesCalificaciones) {
     }
     EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 3.0);
 }
+TEST(PeliculaTest13, OperadorStreamOutCompleto) {
+    Pelicula p(1001, "El Gran Viaje", 120, "Accion");
+    p.AgregarCalificacion(4);
+    p.AgregarCalificacion(5); // promedio 4.5
+
+    std::stringstream buffer;
+    buffer << p;
+
+    std::stringstream esperado;
+    esperado << "Pelicula: El Gran Viaje" << std::endl
+             << "Duracion: 120" << std::endl
+             << "Genero: Accion" << std::endl
+             << "ID: 1001" << std::endl
+             << "Calificacion Promedio: 4.5" << std::endl;
+
+    EXPECT_EQ(buffer.str(), esperado.str());
+}
+TEST(PeliculaTest14, MostrarCompleto) {
+    Pelicula p(2002, "Drama Interno", 90, "Drama");
+    p.AgregarCalificacion(3);
+    p.AgregarCalificacion(4); // promedio 3.5
+
+    std::stringstream buffer;
+    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf()); // redirige cout
+
+    p.Mostrar();
+
+    std::cout.rdbuf(oldCout); // restaura cout
+
+    std::stringstream esperado;
+    esperado << "Pelicula: Drama Interno" << std::endl
+             << "Duracion: 90" << std::endl
+             << "Genero: Drama" << std::endl
+             << "ID: 2002" << std::endl
+             << "Calificacion Promedio: 3.5" << std::endl;
+
+    EXPECT_EQ(buffer.str(), esperado.str());
+}
 
 
