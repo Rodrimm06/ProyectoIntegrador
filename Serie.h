@@ -25,19 +25,19 @@ public:
 	/** 
         Para agregar episodios
         */
-	void agregarEpisodio(const Episodio& episodio);
+	void AgregarEpisodio(const Episodio& episodio);
 	/**
         Para visualizar todos los episodios
         */
-	void mostrarEpisodios() const;
+	void MostrarEpisodios() const;
 	/** 
         Funcion de mostrar
         */
-	void mostrar() const override;
+	void Mostrar() const override;
 	/** 
         Para sacar el promedio de toda la serie
         */
-	double calcularPromedio() const override;
+	double CalcularPromedio() const override;
 	/** 
         Sobrecarga de operador para mayor eficiencia
         */
@@ -45,6 +45,6 @@ public:
 	/** 
         Funcion para obtener episodio
         */
-        const std::vector<Episodio>& getEpisodios() const { return episodios; }
+        const std::vector<Episodio>& GetEpisodios() const { return episodios; }
 
 };
