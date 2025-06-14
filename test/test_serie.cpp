@@ -5,9 +5,9 @@
 TEST(SerieTest1, ConstructorYSetGet)
 {
     Serie s(11182,"Historias de noche",2098,"Misterio");
-    EXPECT_EQ(s.getNombre(), "Historias de noche");
-    EXPECT_EQ(s.getDuracion(), 2098);
-    EXPECT_EQ(s.getGenero(), "Misterio");
+    EXPECT_EQ(s.GetNombre(), "Historias de noche");
+    EXPECT_EQ(s.GetDuracion(), 2098);
+    EXPECT_EQ(s.GetGenero(), "Misterio");
 }
 
 TEST(SerieTest2, ProbarCalcularPromedio)
@@ -17,14 +17,14 @@ TEST(SerieTest2, ProbarCalcularPromedio)
     Episodio e2("Final", 2);
     e1.AgregarCalificacionEpisodio(5);
     e2.AgregarCalificacionEpisodio(3);
-    s.agregarEpisodio(e1);
-    s.agregarEpisodio(e2);
-    EXPECT_EQ(s.calcularPromedio(), 4); // (5 + 3) / 2
+    s.AgregarEpisodio(e1);
+    s.AgregarEpisodio(e2);
+    EXPECT_EQ(s.CalcularPromedio(), 4); // (5 + 3) / 2
 }
 
 TEST(SerieTest3, PromedioSinCalificacionesLanzaExcepcion) {
     Serie s(1432,"Sin ti", 200, "Drama");
-    EXPECT_THROW(s.calcularPromedio(), const char*);
+    EXPECT_THROW(s.CalcularPromedio(), const char*);
 }
 
 TEST(SerieTest4, ProbarMetodoMostrar) {
@@ -37,28 +37,28 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
     Episodio e3("El final", 3);
     e3.AgregarCalificacionEpisodio(3);
 
-    s.agregarEpisodio(e1);
-    s.agregarEpisodio(e2);
-    s.agregarEpisodio(e3);
+    s.AgregarEpisodio(e1);
+    s.AgregarEpisodio(e2);
+    s.AgregarEpisodio(e3);
 
     std::stringstream buffer;
     std::streambuf* originalCout = std::cout.rdbuf();
     std::cout.rdbuf(buffer.rdbuf());
 
-    s.mostrar();
+    s.Mostrar();
 
     std::cout.rdbuf(originalCout);
 
     std::stringstream esperado;
-    esperado << "Serie: " << s.getNombre() << std::endl
-             << "Duracion: " << s.getDuracion() << std::endl
-             << "Genero: " << s.getGenero() << std::endl
-             << "ID: " << s.getId() << std::endl
-             << "Calificacion Promedio: " << s.calcularPromedio() << std::endl
+    esperado << "Serie: " << s.GetNombre() << std::endl
+             << "Duracion: " << s.GetDuracion() << std::endl
+             << "Genero: " << s.GetGenero() << std::endl
+             << "ID: " << s.GetId() << std::endl
+             << "Calificacion Promedio: " << s.CalcularPromedio() << std::endl
              << "Episodios:" << std::endl;
 
-    for (int i = 0; i < s.getEpisodios().size(); i++) {
-        const auto& episodio = s.getEpisodios()[i];
+    for (int i = 0; i < s.GetEpisodios().size(); i++) {
+        const auto& episodio = s.GetEpisodios()[i];
         esperado << "Episodio: " << episodio.GetNombre() << std::endl
                 << "Temporada: " << episodio.GetTemporada() << std::endl
                 << "Calificacion Promedio: " << episodio.CalcularPromedioEpisodio() << std::endl;
@@ -85,19 +85,19 @@ TEST(SerieTest7, ProbarAgregarEpisodio)
     Serie s(5522,"La granja",108,"Misterio");
     Episodio e("El puerco",1);
     e.AgregarCalificacionEpisodio(3);
-    s.agregarEpisodio(e);
-    EXPECT_EQ(s.calcularPromedio(),3);
+    s.AgregarEpisodio(e);
+    EXPECT_EQ(s.CalcularPromedio(),3);
 }
 
 TEST(SerieTest8, ProbarGetSet)
 {
     Serie s(5522,"La granja",108,"Misterio");
-    s.setNombre("La cabaña");
-    s.setDuracion(20);
-    s.setGenero("Drama");
-    s.setId(144);
-    EXPECT_EQ(s.getNombre(),"La cabaña");
-    EXPECT_EQ(s.getDuracion(),20);
+    s.SetNombre("La cabaña");
+    s.SetDuracion(20);
+    s.SetGenero("Drama");
+    s.SetId(144);
+    EXPECT_EQ(s.GetNombre(),"La cabaña");
+    EXPECT_EQ(s.GetDuracion(),20);
     EXPECT_EQ(s.getGenero(),"Drama");
     EXPECT_EQ(s.getId(),144);
 }
