@@ -19,12 +19,20 @@ class Video
 {
 protected:
 	/** 
-        Se declaran todos los atributos de la clase base video en protected para que sus clases hijas
-	puedan acceder también
+        ID para identificar el video
 	*/
 	int id;
+	/** 
+        Nombre del video
+	*/
 	std::string nombre;
+	/** 
+        Duracion en minutos
+	*/
 	double duracion;
+	/** 
+        Genero al que pertenece
+	*/
 	std::string genero;
 	/** 
         Vector para manejar de manera mas dinamica las calificaciones
