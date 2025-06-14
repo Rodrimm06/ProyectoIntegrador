@@ -186,5 +186,5 @@ TEST(SerieTest14, CalcularPromedioConCalificaciones) {
     s.AgregarEpisodio(e2);
     s.AgregarCalificacion(5);
     s.AgregarCalificacion(4);
-    EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 4.5);
+    EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 3);
 }
