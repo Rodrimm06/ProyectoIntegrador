@@ -1,3 +1,7 @@
+#include <gtest/gtest.h>
+#include "Serie.h"
+#include "Episodio.h"
+#include "Pelicula.h"
 TEST(VideoTest1, ConstructorGeneroValido) {
     EXPECT_NO_THROW(Video v(1, "Nombre", 50, "Misterio"));
     EXPECT_NO_THROW(Video v(2, "Nombre", 50, "Accion"));
