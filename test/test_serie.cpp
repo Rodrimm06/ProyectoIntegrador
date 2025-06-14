@@ -117,3 +117,12 @@ TEST(SerieTest9, ProbarOperadorStreamOut) {
     EXPECT_EQ(buffer.str(), esperado.str());
 }
 
+TEST(SerieTest10, CalcularPromedioSinCalificacionesEnEpisodios) {
+    Serie s(7890, "Serie Sin Calificaciones", 40, "Drama");
+
+    Episodio ep("Episodio Vacío", 30);
+
+    s.AgregarEpisodio(ep);
+
+    EXPECT_THROW(s.CalcularPromedio(), const char*);
+}
