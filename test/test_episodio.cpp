@@ -45,4 +45,15 @@ TEST(EpisodioTest5, ProbarAgregarCalificacionErronea){
     Episodio e("Jamaica",3);
     EXPECT_THROW(e.AgregarCalificacionEpisodio(-23), const char*);
 }
+TEST(EpisodioTest6, CalcularPromedioSinCalificacionesLanzaError) {
+    Episodio ep("Pilot", 1);
+    EXPECT_THROW(ep.calcularPromedio(), std::runtime_error);
+}
+
+TEST(EpisodioTest7, CalcularPromedioConCalificaciones) {
+    Episodio ep("Pilot", 1);
+    ep.AgregarCalificacionEpisodio(4);
+    ep.AgregarCalificacionEpisodio(5);
+    EXPECT_DOUBLE_EQ(ep.calcularPromedio(), 4.5);
+}
 
