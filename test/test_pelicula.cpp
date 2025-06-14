@@ -4,46 +4,46 @@
 TEST(PeliculaTest1, ConstructorYSetGet)
 {
 Pelicula p(11182,"El cardenal",159,"Drama");
-    EXPECT_EQ(p.getNombre(), "El cardenal");
-    EXPECT_EQ(p.getDuracion(), 159);
-    EXPECT_EQ(p.getGenero(), "Drama");
+    EXPECT_EQ(p.GetNombre(), "El cardenal");
+    EXPECT_EQ(p.GetDuracion(), 159);
+    EXPECT_EQ(p.GetGenero(), "Drama");
     
 }
 
 TEST(PeliculaTest2, ProbarCalcularPromedio)
 {
     Pelicula p(342,"El marciano", 165, "Misterio");
-    p.agregarCalificacion(4);
-    p.agregarCalificacion(5);
+    p.AgregarCalificacion(4);
+    p.AgregarCalificacion(5);
 
-    EXPECT_DOUBLE_EQ(p.calcularPromedio(), 4.5);
+    EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 4.5);
 
 }
 
 TEST(PeliculaTest3, PromedioSinCalificacionesLanzaExcepcion) {
     Pelicula p(9024,"El marciano 2", 100, "Drama");
-    EXPECT_THROW(p.calcularPromedio(), const char*);
+    EXPECT_THROW(p.CalcularPromedio(), const char*);
 }
 
 TEST(PeliculaTest4, ProbarMetodoMostrar) {
     Pelicula p(1342, "El cardenal", 159, "Drama");
     // Agregar calificaciones
-    p.agregarCalificacion(4);
-    p.agregarCalificacion(5);
+    p.AgregarCalificacion(4);
+    p.AgregarCalificacion(5);
 
     std::stringstream buffer;
     std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
 
-    p.mostrar(); 
+    p.Mostrar(); 
 
     std::cout.rdbuf(oldCout);
 
     std::stringstream esperado;
-    esperado << "Pelicula: " << p.getNombre() << std::endl
-             << "Duracion: " << p.getDuracion() << std::endl
-             << "Genero: " << p.getGenero() << std::endl
-             << "ID: " << p.getId() << std::endl
-             << "Calificacion Promedio: " << p.calcularPromedio() << std::endl;
+    esperado << "Pelicula: " << p.GetNombre() << std::endl
+             << "Duracion: " << p.GetDuracion() << std::endl
+             << "Genero: " << p.GetGenero() << std::endl
+             << "ID: " << p.GetId() << std::endl
+             << "Calificacion Promedio: " << p.CalcularPromedio() << std::endl;
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
@@ -57,15 +57,15 @@ TEST(PeliculaTest6, ProbarErrorGenero){
 }
 TEST(PeliculaTest7, ProbarAgregrarCalificacionErronea){
 		Pelicula p(5522,"La granja",108,"Misterio");
-		EXPECT_THROW(p.agregarCalificacion(-23),const char*);
+		EXPECT_THROW(p.AgregarCalificacion(-23),const char*);
 	}
 TEST(PeliculaTest8, ProbarGetSet){
 		Pelicula p(5522,"La granja",108,"Misterio");
-		p.setNombre("El campo");
-		p.setDuracion(200);
-		p.setGenero("Drama");
-		p.setId(1244);
-		EXPECT_EQ(p.getNombre(),"El campo");
+		p.SetNombre("El campo");
+		p.SetDuracion(200);
+		p.SetGenero("Drama");
+		p.SetId(1244);
+		EXPECT_EQ(p.GetNombre(),"El campo");
 		EXPECT_EQ(p.getDuracion(),200);
 		EXPECT_EQ(p.getGenero(),"Drama");
 		EXPECT_EQ(p.getId(),1244);
