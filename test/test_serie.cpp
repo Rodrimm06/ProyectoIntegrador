@@ -143,3 +143,31 @@ TEST(SerieTest11, CalcularPromedioSinCalificacionesEnEpisodios) {
 
     EXPECT_THROW(s.CalcularPromedio(), const char*);
 }
+TEST(SerieTest12, OperadorStreamOutCompleto) {
+    Serie serie(1234, "Explorando el cosmos", 50, "Misterio");
+
+    Episodio ep1("Inicio", 1);
+    ep1.AgregarCalificacionEpisodio(4);
+    ep1.AgregarCalificacionEpisodio(5); // promedio 4.5
+
+    Episodio ep2("Viaje", 2);
+    ep2.AgregarCalificacionEpisodio(3); // promedio 3.0
+
+    serie.AgregarEpisodio(ep1);
+    serie.AgregarEpisodio(ep2);
+
+    std::stringstream buffer;
+    buffer << serie;
+
+    std::stringstream esperado;
+    esperado << "Serie: " << serie.GetNombre() << std::endl
+             << "Duracion: " << serie.GetDuracion() << std::endl
+             << "Genero: " << serie.GetGenero() << std::endl
+             << "ID: " << serie.GetId() << std::endl
+             << "Calificacion Promedio: " << serie.CalcularPromedio() << std::endl
+             << "Episodios:" << std::endl
+             << ep1
+             << ep2;
+
+    EXPECT_EQ(buffer.str(), esperado.str());
+}
