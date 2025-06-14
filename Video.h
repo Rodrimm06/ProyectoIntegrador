@@ -47,4 +47,3 @@ public:
 	double getDuracion() const;
 	std::string getGenero() const;
 };
-
