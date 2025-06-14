@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2025 Tec de Monterrey
  *
@@ -42,7 +41,7 @@ double Serie::CalcularPromedio() const {
     }
     if (contador == 0) {
         throw "No hay calificaciones para calcular promedio";
-            }
+    }
     
     return promedio / contador;
 }
