@@ -66,7 +66,7 @@ TEST(PeliculaTest8, ProbarGetSet){
 		p.SetGenero("Drama");
 		p.SetId(1244);
 		EXPECT_EQ(p.GetNombre(),"El campo");
-		EXPECT_EQ(p.getDuracion(),200);
-		EXPECT_EQ(p.getGenero(),"Drama");
-		EXPECT_EQ(p.getId(),1244);
+		EXPECT_EQ(p.GetDuracion(),200);
+		EXPECT_EQ(p.GetGenero(),"Drama");
+		EXPECT_EQ(p.GetId(),1244);
 	}
