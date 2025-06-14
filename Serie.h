@@ -16,6 +16,9 @@ Esta clase esta creada para simular una serie en una plataforma de streaming
 class Serie: public Video
 {
 private:
+	/** 
+        Vector de los episodios de la serie
+	*/
 	std::vector<Episodio> episodios;
 public:
 	/** 
