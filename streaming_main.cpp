@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2025 Tec de Monterrey
  *
@@ -10,9 +9,10 @@
 #include <iostream>
 #include "Pelicula.h"
 #include "Serie.h"
+
 void mostrar_genero(const std::vector<Video*>& videos, const std::string& generoBuscado) {
     std::cout << "Videos del genero: " << generoBuscado << std::endl;
-    for (int i = 0;i<size(videos);i++) {
+    for (int i = 0; i < size(videos); i++) {
         if (videos[i]->GetGenero() == generoBuscado) {
             videos[i]->Mostrar();
             std::cout << std::endl;
@@ -72,9 +72,11 @@ int main()
                 std::cout << *s;
             }
         }
-        //Probar funcion de mostrar por genero
+
+        // Probar funcion de mostrar por genero
         std::cout << std::endl;
         mostrar_genero(videos, "Drama");
+
         // Liberar memoria
         for (Video* video : videos) {
             delete video;
@@ -82,6 +84,7 @@ int main()
         videos.clear();
     }
     catch (const char* msg) {
-        std::cerr<<msg<<std::endl;
+        std::cerr << msg << std::endl;
     }
 }
+
