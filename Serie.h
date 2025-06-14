@@ -16,36 +16,36 @@ Esta clase esta creada para simular una serie en una plataforma de streaming
 class Serie: public Video
 {
 private:
-	/** 
+        /** 
         Vector de los episodios de la serie
-	*/
-	std::vector<Episodio> episodios;
+        */
+        std::vector<Episodio> episodios;
 public:
-	/** 
+        /** 
         Constructor
         */
-	Serie(int id_, const std::string& nombre_, double duracion_, const std::string& genero_);
-	/** 
+        Serie(int id_, const std::string& nombre_, double duracion_, const std::string& genero_);
+        /** 
         Para agregar episodios
         */
-	void AgregarEpisodio(const Episodio& episodio);
-	/**
+        void AgregarEpisodio(const Episodio& episodio);
+        /**
         Para visualizar todos los episodios
         */
-	void MostrarEpisodios() const;
-	/** 
+        void MostrarEpisodios() const;
+        /** 
         Funcion de mostrar
         */
-	void Mostrar() const override;
-	/** 
+        void Mostrar() const override;
+        /** 
         Para sacar el promedio de toda la serie
         */
-	double CalcularPromedio() const override;
-	/** 
+        double CalcularPromedio() const override;
+        /** 
         Sobrecarga de operador para mayor eficiencia
         */
-	friend std::ostream& operator<<(std::ostream& os, const Serie& serie);
-	/** 
+        friend std::ostream& operator<<(std::ostream& os, const Serie& serie);
+        /** 
         Funcion para obtener episodio
         */
         const std::vector<Episodio>& GetEpisodios() const { return episodios; }
