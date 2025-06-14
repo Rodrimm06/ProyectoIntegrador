@@ -34,7 +34,7 @@ double Serie::calcularPromedio() const {
     double promedio = 0;
     int contador = 0;
     for (int i = 0; i < (int)episodios.size(); i++) {
-        double epPromedio = episodios[i].calcularPromedioEpisodio();
+        double epPromedio = episodios[i].CalcularPromedioEpisodio();
         promedio += epPromedio;
         contador++;
     }
@@ -53,7 +53,7 @@ void Serie::mostrar() const {
     std::cout << "Calificacion Promedio: " << calcularPromedio() << std::endl;
     std::cout << "Episodios:" << std::endl;
 
-    mostrarEpisodios();
+    MostrarEpisodios();
 }
 
 // Sobrecarga de operador para mayor eficiencia
