@@ -22,7 +22,7 @@ public:
 	/** 
         Funcion de mostrar
         */
-	void mostrar() const override;
+	void Mostrar() const override;
 	/**
         Sobrecarga de operador para mayor eficiencia
         */
