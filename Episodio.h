@@ -43,9 +43,9 @@ public:
     /**
     Obtener nombre de episodio
     */
-    std::string getNombre() const { return nombre; }
+    std::string GetNombre() const { return nombre; }
     /**
     Obtener nombre temporada
     */
-    int getTemporada() const { return temporada; }
+    int GetTemporada() const { return temporada; }
 };
