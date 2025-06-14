@@ -129,7 +129,7 @@ TEST(PeliculaTest14, MostrarCompleto) {
              << "Duracion: "<<p.GetDuracion() << std::endl
              << "Genero: " <<p.GetGenero()<< std::endl
              << "ID: " <<p.GetId ()<< std::endl
-             << "Calificacion Promedio: "<<p.CalcularPromedio() std::endl;
+             << "Calificacion Promedio: "<<p.CalcularPromedio() <<std::endl;
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
