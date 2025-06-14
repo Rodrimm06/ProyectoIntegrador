@@ -1,5 +1,11 @@
-// streamingMain.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
+/*
+ * Copyright (C) 2025 Tec de Monterrey
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 
 #include <iostream>
 #include "Pelicula.h"
@@ -20,7 +26,7 @@ int main()
     try {
         std::vector<Video*> videos;
 
-        // Crear y agregar una película
+        // Crear y agregar una pelÃ­cula
         Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
         peli->agregarCalificacion(5);
         peli->agregarCalificacion(4);
@@ -45,7 +51,7 @@ int main()
         serie->agregarEpisodio(ep2);
         serie->agregarEpisodio(ep3);
 
-        // También podemos agregar calificaciones directamente a la serie
+        // TambiÃ©n podemos agregar calificaciones directamente a la serie
         serie->agregarCalificacion(5);
         serie->agregarCalificacion(4);
 
@@ -80,13 +86,3 @@ int main()
     }
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
