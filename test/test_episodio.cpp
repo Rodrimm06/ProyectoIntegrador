@@ -10,25 +10,25 @@ TEST(EpisodioTest1, ConstructorExcepcion)
 TEST(EpisodioTest2, ProbarCalcularPromedio)
 {
     Episodio e("Llamada", 12);
-    e.agregarCalificacion(4);
-    e.agregarCalificacion(5);
+    e.agregarCalificacionEpisodio(4);
+    e.agregarCalificacionEpisodio(5);
 
-    EXPECT_DOUBLE_EQ(e.calcularPromedio(), 4.5);
+    EXPECT_DOUBLE_EQ(e.calcularPromedioEpisodio(), 4.5);
 }
 
 TEST(EpisodioTest3, PromedioSinCalificacionesLanzaExcepcion) {
     Episodio e("La llegada", 3);
-    EXPECT_THROW(e.calcularPromedio(), const char*);
+    EXPECT_THROW(e.calcularPromedioEpisodio(), const char*);
 }
 
 TEST(EpisodioTest4, ProbarMetodoMostrar){
     Episodio e("Paloma",18);
-    e.agregarCalificacion(3);
+    e.agregarCalificacionEpisodio(3);
 
     std::stringstream flujo;
     std::streambuf* oldCout = std::cout.rdbuf(flujo.rdbuf());
 
-    e.mostrar();
+    e.mostrarEpisodio();
 
     std::cout.rdbuf(oldCout);
 
@@ -43,6 +43,6 @@ TEST(EpisodioTest4, ProbarMetodoMostrar){
 
 TEST(EpisodioTest5, ProbarAgregarCalificacionErronea){
     Episodio e("Jamaica",3);
-    EXPECT_THROW(e.agregarCalificacion(-23), const char*);
+    EXPECT_THROW(e.agregarCalificacionEpisodio(-23), const char*);
 }
 
