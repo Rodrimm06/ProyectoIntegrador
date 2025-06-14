@@ -84,12 +84,12 @@ TEST(PeliculaTest10, AgregarCalificacionesEnLimites) {
 }
 
 TEST(PeliculaTest11, MostrarSinCalificaciones) {
-    Pelicula p(5678, "Sin Calif", 120, "Drama");
+    Pelicula p(5678, "El cohete", 120, "Drama");
    EXPECT_THROW(p.Mostrar(),const char*);
 }
 
 TEST(PeliculaTest12, MultiplesCalificaciones) {
-    Pelicula p(6789, "Muchas Califs", 110, "Comedia");
+    Pelicula p(6789, "El Oso", 110, "Accion");
     for (int i = 1; i <= 5; ++i) {
         p.AgregarCalificacion(i);
     }
