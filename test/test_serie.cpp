@@ -171,3 +171,14 @@ TEST(SerieTest12, OperadorStreamOutCompleto) {
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
+TEST(SerieTest13, CalcularPromedioSinCalificacionesLanzaError) {
+    Serie s(2, "One drama story", 10.0, "Drama");
+    EXPECT_THROW(s.CalcularPromedio(), std::runtime_error);
+}
+
+TEST(SerieTest14, CalcularPromedioConCalificaciones) {
+    Serie s(2, "One drama story", 10.0, "Drama");
+    s.AgregarCalificacion(5);
+    s.AgregarCalificacion(4);
+    EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 4.5);
+}
