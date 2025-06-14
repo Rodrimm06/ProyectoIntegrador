@@ -20,11 +20,11 @@ public:
     // Constructor
     Episodio(const std::string& nombre_, int temporada_);
     // Para ver informacion de los episodios
-    void mostrarEpisodio() const;
+    void MostrarEpisodio() const;
     // Para ver el promedio de la calificacion de los episodios
-    double calcularPromedioEpisodio() const;
+    double CalcularPromedioEpisodio() const;
     // Funcion para agregar una calificacion al vector
-    void agregarCalificacionEpisodio(int cali);
+    void AgregarCalificacionEpisodio(int cali);
     // Sobrecarga de operador para mayor eficiencia
     friend std::ostream& operator<<(std::ostream& os, const Episodio& episodio);
     // Getters episodio
