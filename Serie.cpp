@@ -46,11 +46,7 @@ double Serie::CalcularPromedio() const {
 
 // Funcion de mostrar
 void Serie::Mostrar() const {
-    std::cout << "Serie: " << GetNombre() << std::endl
-              << "Duracion: " << GetDuracion() << std::endl
-              << "Genero: " << GetGenero() << std::endl
-              << "ID: " << GetId() << std::endl;
-
+    std::cout << "Serie: " << GetNombre() << std::endl<< "Duracion: " << GetDuracion() << std::endl<< "Genero: " << GetGenero() << std::endl<< "ID: " << GetId() << std::endl;
     std::cout << "Calificacion Promedio: " << CalcularPromedio() << std::endl;
     std::cout << "Episodios:" << std::endl;
 
@@ -59,11 +55,7 @@ void Serie::Mostrar() const {
 
 // Sobrecarga de operador para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Serie& serie) {
-    os << "Serie: " << serie.GetNombre() << std::endl
-       << "Duracion: " << serie.GetDuracion() << std::endl
-       << "Genero: " << serie.GetGenero() << std::endl
-       << "ID: " << serie.GetId() << std::endl;
-
+    os << "Serie: " << serie.GetNombre() << std::endl<< "Duracion: " << serie.GetDuracion() << std::endl<< "Genero: " << serie.GetGenero() << std::endl<< "ID: " << serie.GetId() << std::endl;
     os << "Calificacion Promedio: " << serie.CalcularPromedio() << std::endl;
     os << "Episodios:" << std::endl;
 
