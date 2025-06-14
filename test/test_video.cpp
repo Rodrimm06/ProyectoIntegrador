@@ -22,7 +22,7 @@ TEST(VideoTest4, ConstructorDuracionInvalidaLanzaExcepcion) {
     EXPECT_THROW(Video v(8, "Nombre", -5, "Accion"), const char*);
 }
 TEST(VideoTest5, AgregarCalificacionValida) {
-    Serie s(100, "Serie Test", 120, "Misterio"); // o Video si es instanciable
+    Serie s(100, "Serie Test", 120, "Misterio");
     EXPECT_NO_THROW(s.AgregarCalificacion(3));
     EXPECT_NO_THROW(s.AgregarCalificacion(1));
     EXPECT_NO_THROW(s.AgregarCalificacion(5));
