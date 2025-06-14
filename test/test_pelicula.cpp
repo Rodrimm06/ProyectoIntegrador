@@ -70,3 +70,45 @@ TEST(PeliculaTest8, ProbarGetSet){
 		EXPECT_EQ(p.GetGenero(),"Drama");
 		EXPECT_EQ(p.GetId(),1244);
 	}
+
+TEST(PeliculaTest9, AgregarCalificacionMayorQueMax) {
+    Pelicula p(1234, "Test", 100, "Drama");
+    EXPECT_THROW(p.AgregarCalificacion(7), const char*);
+}
+
+TEST(PeliculaTest10, AgregarCalificacionesEnLimites) {
+    Pelicula p(4321, "Test Limites", 90, "Accion");
+    p.AgregarCalificacion(1);
+    p.AgregarCalificacion(5);
+    EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 3.0);
+}
+
+TEST(PeliculaTest11, MostrarSinCalificaciones) {
+    Pelicula p(5678, "Sin Calif", 120, "Drama");
+
+    std::stringstream buffer;
+    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
+
+    p.Mostrar();
+
+    std::cout.rdbuf(oldCout);
+
+    std::string salida = buffer.str();
+    EXPECT_NE(salida.find("Pelicula:"), std::string::npos);
+    // Aquí también puedes verificar si muestra "Calificacion Promedio: 0" o maneja excepción
+}
+
+TEST(PeliculaTest12, MultiplesCalificaciones) {
+    Pelicula p(6789, "Muchas Califs", 110, "Comedia");
+    for (int i = 1; i <= 5; ++i) {
+        p.AgregarCalificacion(i);
+    }
+    EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 3.0);
+}
+TEST(PeliculaTest13, SettersInvalidos) {
+    Pelicula p(5555, "Setter Test", 100, "Drama");
+
+    EXPECT_THROW(p.SetDuracion(-10), const char*);
+    EXPECT_THROW(p.SetGenero("Desconocido"), const char*);
+}
+
