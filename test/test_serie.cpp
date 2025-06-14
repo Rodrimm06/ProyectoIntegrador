@@ -15,8 +15,8 @@ TEST(SerieTest2, ProbarCalcularPromedio)
     Serie s(1432, "Historias de terror", 100, "Misterio");
     Episodio e1("Intro", 1);
     Episodio e2("Final", 2);
-    e1.agregarCalificacionEpisodio(5);
-    e2.agregarCalificacionEpisodio(3);
+    e1.AgregarCalificacionEpisodio(5);
+    e2.AgregarCalificacionEpisodio(3);
     s.agregarEpisodio(e1);
     s.agregarEpisodio(e2);
     EXPECT_EQ(s.calcularPromedio(), 4); // (5 + 3) / 2
@@ -31,11 +31,11 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
     Serie s(1001, "Cosas extrañas", 45, "Misterio");
 
     Episodio e1("El principio", 1);
-    e1.agregarCalificacionEpisodio(4);
+    e1.AgregarCalificacionEpisodio(4);
     Episodio e2("El medio", 2);
-    e2.agregarCalificacionEpisodio(5);
+    e2.AgregarCalificacionEpisodio(5);
     Episodio e3("El final", 3);
-    e3.agregarCalificacionEpisodio(3);
+    e3.AgregarCalificacionEpisodio(3);
 
     s.agregarEpisodio(e1);
     s.agregarEpisodio(e2);
@@ -61,7 +61,7 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
         const auto& episodio = s.getEpisodios()[i];
         esperado << "Episodio: " << episodio.getNombre() << std::endl
                 << "Temporada: " << episodio.getTemporada() << std::endl
-                << "Calificacion Promedio: " << episodio.calcularPromedioEpisodio() << std::endl;
+                << "Calificacion Promedio: " << episodio.CalcularPromedioEpisodio() << std::endl;
     }
 
     EXPECT_EQ(buffer.str(), esperado.str());
