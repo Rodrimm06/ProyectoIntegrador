@@ -61,7 +61,7 @@ TEST(SerieTest4, ProbarMetodoMostrar) {
         const auto& episodio = s.getEpisodios()[i];
         esperado << "Episodio: " << episodio.getNombre() << std::endl
                 << "Temporada: " << episodio.getTemporada() << std::endl
-                << "Calificacion Promedio: " << episodio.calcularPromedio() << std::endl;
+                << "Calificacion Promedio: " << episodio.calcularPromedioEpisodio() << std::endl;
     }
 
     EXPECT_EQ(buffer.str(), esperado.str());
