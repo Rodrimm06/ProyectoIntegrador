@@ -133,3 +133,13 @@ TEST(SerieTest10, CalcularPromedioSinCalificacionesEnEpisodios) {
 
     EXPECT_THROW(s.CalcularPromedio(), const char*);
 }
+TEST(SerieTest, CalcularPromedioSinCalificacionesEnEpisodios) {
+    Serie s(1, "Serie sin calificaciones", 600, "Drama");
+
+    Episodio ep1("Episodio 1", 1);
+    Episodio ep2("Episodio 2", 1);
+    s.AgregarEpisodio(ep1);
+    s.AgregarEpisodio(ep2);
+
+    EXPECT_THROW(s.CalcularPromedio(), const char*);
+}
