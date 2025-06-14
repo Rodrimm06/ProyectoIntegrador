@@ -16,10 +16,16 @@ Es una clase abstracta
 class Pelicula: public Video
 {
 public:
-	// Constructor
+	/** 
+        Constructor
+        */
 	Pelicula(int id_,const std::string& nombre_, double duracion_,const std::string& genero_);
-	// Funcion de mostrar
+	/** 
+        Funcion de mostrar
+        */
 	void mostrar() const override;
-	// Sobrecarga de operador para mayor eficiencia
+	/**
+        Sobrecarga de operador para mayor eficiencia
+        */
 	friend std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula);
 };
