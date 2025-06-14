@@ -11,10 +11,15 @@
 #include <iostream>
 #include <vector>
 #include <string>
+/**
+Esta clase simula ser un video dentro de una plataforma de streaming
+Es una clase abstracta
+*/
 class Video
 {
 protected:
-	/* Se declaran todos los atributos de la clase base video en protected para que sus clases hijas
+	/** 
+        Se declaran todos los atributos de la clase base video en protected para que sus clases hijas
 	puedan acceder también
 	*/
 	int id;
