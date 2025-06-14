@@ -30,4 +30,3 @@ public:
         const std::vector<Episodio>& getEpisodios() const { return episodios; }
 
 };
-
