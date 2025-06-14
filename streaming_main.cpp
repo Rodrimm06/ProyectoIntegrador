@@ -23,8 +23,6 @@ void mostrar_genero(const std::vector<Video*>& videos, const std::string& genero
 
 int main()
 {
-    // Para el manejo de errores
-    try {
         std::vector<Video*> videos;
 
         // Crear y agregar una película
@@ -83,9 +81,7 @@ int main()
             delete video;
         }
         videos.clear();
-    }
-    catch (const char* msg) {
-        std::cerr << msg << std::endl;
-    }
+    
+   
 }
 
