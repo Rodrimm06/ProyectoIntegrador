@@ -10,6 +10,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
+/**
+Esta clase esta diseñada para ser un episodio cualquiera de una serie
+*/
 class Episodio
 {
 private:
