@@ -70,5 +70,3 @@ std::ostream& operator<<(std::ostream& os, const Serie& serie) {
     }
     return os;
 }
-
-
