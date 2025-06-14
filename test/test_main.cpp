@@ -265,4 +265,50 @@ TEST(MainTest8, EpisodioCalificaciones) {
     double promedio = ep.CalcularPromedioEpisodio(); 
     EXPECT_DOUBLE_EQ(promedio, 4.5);
 }
+TEST(MainTest9, MostrarSinCalificacionesLanzaError_Pelicula) {
+    Pelicula peli(100, "Peli sin calif", 120, "Accion");
+    EXPECT_THROW(peli.Mostrar(), const char*);
+}
 
+TEST(MainTest10, MostrarSinCalificacionesLanzaError_Serie) {
+    Serie serie(101, "Serie sin calif", 20, "Drama");
+    EXPECT_THROW(serie.Mostrar(), const char*);
+}
+
+TEST(MainTest11, CalcularPromedioSinCalificacionesLanzaError_Pelicula) {
+    Pelicula peli(102, "Peli sin calif", 100, "Accion");
+    EXPECT_THROW(peli.CalcularPromedio(), const char*);
+}
+
+TEST(MainTest12, CalcularPromedioSinCalificacionesLanzaError_Serie) {
+    Serie serie(103, "Serie sin calif", 15, "Drama");
+    EXPECT_THROW(serie.CalcularPromedio(), const char*);
+}
+
+TEST(MainTest13, MostrarGeneroConGeneroInvalidoLanzaError) {
+    std::vector<Video*> videos;
+
+    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
+    peli->AgregarCalificacion(5);
+    videos.push_back(peli);
+
+    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
+    serie->AgregarCalificacion(4);
+    videos.push_back(serie);
+
+    EXPECT_THROW(mostrar_genero(videos, "Comedia"), const char*);
+
+    for (Video* v : videos) {
+        delete v;
+    }
+}
+
+TEST(MainTest14, EpisodioMostrarSinCalificacionesLanzaError) {
+    Episodio ep("Episodio sin calif", 1);
+    EXPECT_THROW(ep.Mostrar(), const char*);
+}
+
+TEST(MainTest15, EpisodioCalcularPromedioSinCalificacionesLanzaError) {
+    Episodio ep("Episodio sin calif", 1);
+    EXPECT_THROW(ep.CalcularPromedioEpisodio(), const char*);
+}
