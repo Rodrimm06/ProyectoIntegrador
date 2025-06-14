@@ -20,7 +20,9 @@ private:
     int temporada;
     std::vector<int> calificaciones;
 public:
-    // Constructor
+    /** 
+    Constructor
+    */
     Episodio(const std::string& nombre_, int temporada_);
     /** 
     Para ver informacion de los episodios
