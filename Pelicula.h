@@ -15,16 +15,16 @@ Esta clase simula ser una pelicua dentro de una plataforma de streaming
 class Pelicula: public Video
 {
 public:
-	/** 
+        /** 
         Constructor
         */
-	Pelicula(int id_,const std::string& nombre_, double duracion_,const std::string& genero_);
-	/** 
+        Pelicula(int id_,const std::string& nombre_, double duracion_,const std::string& genero_);
+        /** 
         Funcion de mostrar
         */
-	void Mostrar() const override;
-	/**
+        void Mostrar() const override;
+        /**
         Sobrecarga de operador para mayor eficiencia
         */
-	friend std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula);
+        friend std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula);
 };
