@@ -16,19 +16,19 @@ Serie::Serie(int id_, const std::string& nombre_, double duracion_, const std::s
 }
 
 // Para agregar episodios
-void Serie::agregarEpisodio(const Episodio& episodio) {
+void Serie::AgregarEpisodio(const Episodio& episodio) {
     episodios.push_back(episodio);
 }
 
 // Para visualizar todos los episodios
-void Serie::mostrarEpisodios() const {
+void Serie::MostrarEpisodios() const {
     for (int i = 0; i < (int)episodios.size(); i++) {
         std::cout << episodios[i];
     }
 }
 
 // Se calcula el promedio de todos los episodios de la serie y es el que se devuelve
-double Serie::calcularPromedio() const {
+double Serie::CalcularPromedio() const {
     if (episodios.empty()) throw "No hay episodios para calcular promedio";
     
     double promedio = 0;
@@ -44,7 +44,7 @@ double Serie::calcularPromedio() const {
 }
 
 // Funcion de mostrar
-void Serie::mostrar() const {
+void Serie::Mostrar() const {
     std::cout << "Serie: " << getNombre() << std::endl
               << "Duracion: " << getDuracion() << std::endl
               << "Genero: " << getGenero() << std::endl
