@@ -102,3 +102,18 @@ TEST(SerieTest8, ProbarGetSet)
     EXPECT_EQ(s.GetId(),144);
 }
 
+TEST(SerieTest9, ProbarOperadorStreamOut) {
+    Serie s(9876, "Ciencia Extrema", 60, "Documental");
+
+    std::stringstream buffer;
+    buffer << s;  // Aquí se usa operator<<
+
+    std::stringstream esperado;
+    esperado << "Serie: " << s.GetNombre() << std::endl
+             << "Duracion: " << s.GetDuracion() << std::endl
+             << "Genero: " << s.GetGenero() << std::endl
+             << "ID: " << s.GetId() << std::endl;
+
+    EXPECT_EQ(buffer.str(), esperado.str());
+}
+
