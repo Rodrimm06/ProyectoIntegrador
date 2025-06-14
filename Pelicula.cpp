@@ -15,11 +15,7 @@ Pelicula::Pelicula(int id_, const std::string& nombre_, double duracion_,  const
 }
 // Funcion para mostrar informacion de la pelicula
 void Pelicula::Mostrar() const {
-    std::cout << "Pelicula: " << GetNombre() << std::endl <<
-        "Duracion: " << GetDuracion() << std::endl <<
-        "Genero: " << GetGenero() << std::endl <<
-        "ID: " << GetId() << std::endl <<
-        "Calificacion Promedio: " << CalcularPromedio() << std::endl;
+    std::cout << "Pelicula: " << GetNombre() << std::endl <<"Duracion: " << GetDuracion() << std::endl <<"Genero: " << GetGenero() << std::endl <<"ID: " << GetId() << std::endl <<"Calificacion Promedio: " << CalcularPromedio() << std::endl;
 }
 // Sobrecarga de operadores para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula) {
