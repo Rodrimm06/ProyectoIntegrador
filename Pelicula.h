@@ -18,4 +18,3 @@ public:
 	// Sobrecarga de operador para mayor eficiencia
 	friend std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula);
 };
-
