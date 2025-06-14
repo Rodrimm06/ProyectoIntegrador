@@ -20,10 +20,7 @@ void Pelicula::Mostrar() const {
 }
 // Sobrecarga de operadores para mayor eficiencia
 std::ostream& operator<<(std::ostream& os, const Pelicula& pelicula) {
-    os << "Pelicula: " << pelicula.GetNombre() << std::endl
-        << "Duracion: " << pelicula.GetDuracion() << std::endl
-        << "Genero: " << pelicula.GetGenero() << std::endl
-        << "ID: " << pelicula.GetId() << std::endl
-        << "Calificacion Promedio: " << pelicula.CalcularPromedio() << std::endl;
+    os << "Pelicula: " << pelicula.GetNombre() << std::endl<< "Duracion: " << pelicula.GetDuracion() << std::endl<< "Genero: " << pelicula.GetGenero() << std::endl
+        << "ID: " << pelicula.GetId() << std::endl<< "Calificacion Promedio: " << pelicula.CalcularPromedio() << std::endl;
     return os;
 }
