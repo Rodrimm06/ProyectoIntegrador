@@ -133,5 +133,15 @@ TEST(PeliculaTest14, MostrarCompleto) {
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
+TEST(PeliculaTest15, CalcularPromedioSinCalificacionesLanzaError) {
+    Pelicula p(1, "Fast and furious", 148, "Accion");
+    EXPECT_THROW(p.CalcularPromedio(), std::runtime_error);
+}
 
+TEST(PeliculaTest16, CalcularPromedioConCalificaciones) {
+    Pelicula p(1, "Fast and furious", 148, "Accion");
+    p.AgregarCalificacion(5);
+    p.AgregarCalificacion(3);
+    EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 4.0);
+}
 
