@@ -34,16 +34,16 @@ int main()
 
         // Crear episodios para la serie
         Episodio ep1("Pilot", 1);
-        ep1.agregarCalificacionEpisodio(4);
-        ep1.agregarCalificacionEpisodio(5);
+        ep1.AgregarCalificacionEpisodio(4);
+        ep1.AgregarCalificacionEpisodio(5);
 
         Episodio ep2("Second Episode", 1);
-        ep2.agregarCalificacionEpisodio(3);
-        ep2.agregarCalificacionEpisodio(4);
+        ep2.AgregarCalificacionEpisodio(3);
+        ep2.AgregarCalificacionEpisodio(4);
 
         Episodio ep3("Third Episode", 1);
-        ep3.agregarCalificacionEpisodio(5);
-        ep3.agregarCalificacionEpisodio(5);
+        ep3.AgregarCalificacionEpisodio(5);
+        ep3.AgregarCalificacionEpisodio(5);
 
         // Crear una serie y agregar episodios
         Serie* serie = new Serie(2, "One drama story", 10.0, "Drama");
