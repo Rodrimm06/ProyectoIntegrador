@@ -98,7 +98,7 @@ TEST(SerieTest8, ProbarGetSet)
     s.SetId(144);
     EXPECT_EQ(s.GetNombre(),"La cabaña");
     EXPECT_EQ(s.GetDuracion(),20);
-    EXPECT_EQ(s.getGenero(),"Drama");
-    EXPECT_EQ(s.getId(),144);
+    EXPECT_EQ(s.GetGenero(),"Drama");
+    EXPECT_EQ(s.GetId(),144);
 }
 
