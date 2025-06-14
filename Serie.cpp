@@ -40,7 +40,9 @@ double Serie::CalcularPromedio() const {
         promedio += epPromedio;
         contador++;
     }
-    if (contador == 0) throw "No hay calificaciones para calcular promedio";
+    if (contador == 0) {
+        throw "No hay calificaciones para calcular promedio"
+            };
     
     return promedio / contador;
 }
