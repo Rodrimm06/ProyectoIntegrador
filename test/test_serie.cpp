@@ -173,7 +173,7 @@ TEST(SerieTest12, OperadorStreamOutCompleto) {
 }
 TEST(SerieTest13, CalcularPromedioSinCalificacionesLanzaError) {
     Serie s(2, "One drama story", 10.0, "Drama");
-    EXPECT_THROW(s.CalcularPromedio(), std::runtime_error);
+    EXPECT_THROW(s.CalcularPromedio(), const char*);
 }
 
 TEST(SerieTest14, CalcularPromedioConCalificaciones) {
