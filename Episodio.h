@@ -30,7 +30,4 @@ public:
 	// Getters episodio
   	std::string getNombre() const { return nombre; }
    	int getTemporada() const { return temporada; }
-
-
 };
-
