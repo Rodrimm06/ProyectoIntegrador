@@ -21,7 +21,7 @@ set(SOURCES_COMMON
 
 # Crear el ejecutable principal
 add_executable(main
-        streamingMain.cpp
+        streaming_main.cpp
         ${SOURCES_COMMON}
 )
 
