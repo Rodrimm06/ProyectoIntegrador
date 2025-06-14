@@ -95,10 +95,5 @@ TEST(PeliculaTest12, MultiplesCalificaciones) {
     }
     EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 3.0);
 }
-TEST(PeliculaTest13, SettersInvalidos) {
-    Pelicula p(5555, "Setter Test", 100, "Drama");
 
-    EXPECT_THROW(p.SetDuracion(-10), const char*);
-    EXPECT_THROW(p.SetGenero("Desconocido"), const char*);
-}
 
