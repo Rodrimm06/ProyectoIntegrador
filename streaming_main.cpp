@@ -74,7 +74,7 @@ int main()
         }
         //Probar funcion de mostrar por genero
         std::cout << std::endl;
-        MostrarPorGenero(videos, "Drama");
+        MostrarGenero(videos, "Drama");
         // Liberar memoria
         for (Video* video : videos) {
             delete video;
