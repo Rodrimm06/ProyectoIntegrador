@@ -178,6 +178,12 @@ TEST(SerieTest13, CalcularPromedioSinCalificacionesLanzaError) {
 
 TEST(SerieTest14, CalcularPromedioConCalificaciones) {
     Serie s(2, "One drama story", 10.0, "Drama");
+    Episodio e("Drama Queen", 1);
+    Episodio e2("New Life", 1);
+    e.AgregarCalificacionEpisodio(5);
+    e2.AgregarCalificacionEpisodio(1);
+    s.AgregarEpisodio(e);
+    s.AgregarEpisodio(e2);
     s.AgregarCalificacion(5);
     s.AgregarCalificacion(4);
     EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 4.5);
