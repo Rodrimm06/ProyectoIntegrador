@@ -64,7 +64,7 @@ if(ENABLE_TESTING)
     add_test_executable(test_pelicula test/test_pelicula.cpp)
     add_test_executable(test_serie test/test_serie.cpp)
     add_test_executable(test_episodio test/test_episodio.cpp)
-
+    add_test_executable(test_video test/test_video.cpp)
     # Generar reportes de cobertura
     if (ENABLE_COVERAGE)
         find_program(LCOV lcov)
