@@ -10,6 +10,9 @@
 #pragma once
 #include "Video.h"
 #include "Episodio.h"
+/**
+Esta clase esta creada para simular una serie en una plataforma de streaming
+*/
 class Serie: public Video
 {
 private:
