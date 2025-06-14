@@ -10,7 +10,7 @@
 #include <iostream>
 #include "Pelicula.h"
 #include "Serie.h"
-void MostrarPorGenero(const std::vector<Video*>& videos, const std::string& generoBuscado) {
+void MostrarGenero(const std::vector<Video*>& videos, const std::string& generoBuscado) {
     std::cout << "Videos del genero: " << generoBuscado << std::endl;
     for (int i = 0;i<size(videos);i++) {
         if (videos[i]->GetGenero() == generoBuscado) {
