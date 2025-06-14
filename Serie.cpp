@@ -45,12 +45,12 @@ double Serie::CalcularPromedio() const {
 
 // Funcion de mostrar
 void Serie::Mostrar() const {
-    std::cout << "Serie: " << getNombre() << std::endl
-              << "Duracion: " << getDuracion() << std::endl
-              << "Genero: " << getGenero() << std::endl
-              << "ID: " << getId() << std::endl;
+    std::cout << "Serie: " << GetNombre() << std::endl
+              << "Duracion: " << GetDuracion() << std::endl
+              << "Genero: " << GetGenero() << std::endl
+              << "ID: " << GetId() << std::endl;
 
-    std::cout << "Calificacion Promedio: " << calcularPromedio() << std::endl;
+    std::cout << "Calificacion Promedio: " << CalcularPromedio() << std::endl;
     std::cout << "Episodios:" << std::endl;
 
     mostrarEpisodios();
