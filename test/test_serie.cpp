@@ -104,9 +104,10 @@ TEST(SerieTest8, ProbarGetSet)
 
 TEST(SerieTest9, ProbarOperadorStreamOut) {
     Serie s(9876, "Supervivencia en el artico", 60, "Misterio");
-    Episodio e("Piloto",1);
+    Episodio e("Piloto", 1);
     e.AgregarCalificacionEpisodio(3);
     s.AgregarEpisodio(e);
+
     std::stringstream buffer;
     buffer << s;  // Aquí se usa operator<<
 
@@ -114,10 +115,14 @@ TEST(SerieTest9, ProbarOperadorStreamOut) {
     esperado << "Serie: " << s.GetNombre() << std::endl
              << "Duracion: " << s.GetDuracion() << std::endl
              << "Genero: " << s.GetGenero() << std::endl
-             << "ID: " << s.GetId() << std::endl;
+             << "ID: " << s.GetId() << std::endl
+             << "Calificacion Promedio: " << s.CalcularPromedio() << std::endl
+             << "Episodios:" << std::endl
+             << e;
 
     EXPECT_EQ(buffer.str(), esperado.str());
 }
+
 
 TEST(SerieTest10, CalcularPromedioSinCalificacionesEnEpisodios) {
     Serie s(7890, "Serie Sin Calificaciones", 40, "Drama");
