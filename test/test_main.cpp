@@ -7,7 +7,6 @@ TEST(MainTest1, CrearVideosEjemplo) {
     std::vector<Video*> videos;
     EXPECT_NO_THROW(videos = crearVideosEjemplo());
     EXPECT_EQ(videos.size(), 2);  // Una película y una serie
-    liberarVideos(videos);
 }
 
 TEST(MainTest2, MostrarTodosLosVideos) {
@@ -26,7 +25,6 @@ TEST(MainTest2, MostrarTodosLosVideos) {
     EXPECT_NE(salida.find("Fast and furious"), std::string::npos);
     EXPECT_NE(salida.find("One drama story"), std::string::npos);
 
-    liberarVideos(videos);
 }
 
 TEST(MainTest3, OperadorSalidaConDynamicCast) {
@@ -49,7 +47,6 @@ TEST(MainTest3, OperadorSalidaConDynamicCast) {
     EXPECT_NE(salida.find("Fast and furious"), std::string::npos);
     EXPECT_NE(salida.find("One drama story"), std::string::npos);
 
-    liberarVideos(videos);
 }
 
 TEST(MainTest4, MostrarGenero) {
@@ -83,7 +80,6 @@ TEST(MainTest4, MostrarGenero) {
         EXPECT_EQ(salida.find("One drama story"), std::string::npos);
     }
 
-    liberarVideos(videos);
 }
 
 TEST(MainTest5, LiberarVideos) {
