@@ -26,30 +26,67 @@ protected:
 	std::string nombre;
 	double duracion;
 	std::string genero;
-	// Vector para manejar de manera mas dinamica las calificaciones
+	/** 
+        Vector para manejar de manera mas dinamica las calificaciones
+        */
 	std::vector<int> calificaciones;
 
-// Se declaran los metodos de la clase
+/**
+Se declaran los metodos de la clase
+*/
 public:
-	// Constructor
+	/** 
+        Constructor
+        */
 	Video(int id_, const std::string& nombre_, double duracion_, const std::string& genero_);
-	// Fucnion para agregar una calificacion
+	/** 
+        Funcion para agregar una calificacion
+        */
 	void virtual agregarCalificacion(int cali);
-	// Funcion puramente virtual para que se convierta en una clase abstracta
+        /** 
+        Funcion puramente virtual para que se convierta en una clase abstracta
+        */
 	void virtual mostrar() const=0;
-	// Funcion para calcular el promedio
+        /** 
+        Funcion para calcular el promedio
+        */
 	double virtual calcularPromedio() const;
 
-	// Destructor
+        /** 
+        Destructor
+        */
 	virtual ~Video() = default;
 
-	// Funciones set/get
+        /**
+        Funcion set de ID
+        */
 	void setId(int id_);
+        /**
+        Funcion set de nombre
+        */
 	void setNombre(std::string nom);
+        /**
+        Funcion set de duracion
+        */
 	void setDuracion(double dur);
+        /**
+        Funcion set de genero
+        */
 	void setGenero(std::string gen);
+        /**
+        Funcion get de ID
+        */
 	int getId() const;
+        /**
+        Funcion get de nombre
+        */
 	std::string getNombre() const;
+        /**
+        Funcion get de duracion
+        */
 	double getDuracion() const;
+        /**
+        Funcion get de genero
+        */
 	std::string getGenero() const;
 };
