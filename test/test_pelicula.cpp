@@ -135,7 +135,7 @@ TEST(PeliculaTest14, MostrarCompleto) {
 }
 TEST(PeliculaTest15, CalcularPromedioSinCalificacionesLanzaError) {
     Pelicula p(1, "Fast and furious", 148, "Accion");
-    EXPECT_THROW(p.CalcularPromedio(), std::runtime_error);
+    EXPECT_THROW(p.CalcularPromedio(), const char*);
 }
 
 TEST(PeliculaTest16, CalcularPromedioConCalificaciones) {
