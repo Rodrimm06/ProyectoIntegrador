@@ -29,7 +29,9 @@ void Serie::MostrarEpisodios() const {
 
 // Se calcula el promedio de todos los episodios de la serie y es el que se devuelve
 double Serie::CalcularPromedio() const {
-    if (episodios.empty()) throw "No hay episodios para calcular promedio";
+    if (episodios.empty()) {
+        throw "No hay episodios para calcular promedio"
+    };
     
     double promedio = 0;
     int contador = 0;
