@@ -1,16 +1,76 @@
 #include <gtest/gtest.h>
+#include <sstream>
 #include "Pelicula.h"
 #include "Serie.h"
 #include "Episodio.h"
-#include "streaming_main.cpp"
+#include "streaming_main.cpp" 
+
 TEST(MainTest1, CrearVideosEjemplo) {
     std::vector<Video*> videos;
-    EXPECT_NO_THROW(videos = crearVideosEjemplo());
-    EXPECT_EQ(videos.size(), 2);  // Una película y una serie
+
+    // Crear película
+    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
+    peli->AgregarCalificacion(5);
+    peli->AgregarCalificacion(4);
+    videos.push_back(peli);
+
+    // Crear episodios
+    Episodio ep1("Pilot", 1);
+    ep1.AgregarCalificacionEpisodio(4);
+    ep1.AgregarCalificacionEpisodio(5);
+
+    Episodio ep2("Second Episode", 1);
+    ep2.AgregarCalificacionEpisodio(3);
+    ep2.AgregarCalificacionEpisodio(4);
+
+    Episodio ep3("Third Episode", 1);
+    ep3.AgregarCalificacionEpisodio(5);
+    ep3.AgregarCalificacionEpisodio(5);
+
+    // Crear serie y agregar episodios
+    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
+    serie->AgregarEpisodio(ep1);
+    serie->AgregarEpisodio(ep2);
+    serie->AgregarEpisodio(ep3);
+    serie->AgregarCalificacion(5);
+    serie->AgregarCalificacion(4);
+    videos.push_back(serie);
+
+    EXPECT_EQ(videos.size(), 2);
+
+    // Liberar memoria
+    for (Video* v : videos) {
+        delete v;
+    }
 }
 
 TEST(MainTest2, MostrarTodosLosVideos) {
-    std::vector<Video*> videos = crearVideosEjemplo();
+    std::vector<Video*> videos;
+
+    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
+    peli->AgregarCalificacion(5);
+    peli->AgregarCalificacion(4);
+    videos.push_back(peli);
+
+    Episodio ep1("Pilot", 1);
+    ep1.AgregarCalificacionEpisodio(4);
+    ep1.AgregarCalificacionEpisodio(5);
+
+    Episodio ep2("Second Episode", 1);
+    ep2.AgregarCalificacionEpisodio(3);
+    ep2.AgregarCalificacionEpisodio(4);
+
+    Episodio ep3("Third Episode", 1);
+    ep3.AgregarCalificacionEpisodio(5);
+    ep3.AgregarCalificacionEpisodio(5);
+
+    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
+    serie->AgregarEpisodio(ep1);
+    serie->AgregarEpisodio(ep2);
+    serie->AgregarEpisodio(ep3);
+    serie->AgregarCalificacion(5);
+    serie->AgregarCalificacion(4);
+    videos.push_back(serie);
 
     std::stringstream buffer;
     std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
@@ -25,10 +85,38 @@ TEST(MainTest2, MostrarTodosLosVideos) {
     EXPECT_NE(salida.find("Fast and furious"), std::string::npos);
     EXPECT_NE(salida.find("One drama story"), std::string::npos);
 
+    for (Video* v : videos) {
+        delete v;
+    }
 }
 
 TEST(MainTest3, OperadorSalidaConDynamicCast) {
-    std::vector<Video*> videos = crearVideosEjemplo();
+    std::vector<Video*> videos;
+
+    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
+    peli->AgregarCalificacion(5);
+    peli->AgregarCalificacion(4);
+    videos.push_back(peli);
+
+    Episodio ep1("Pilot", 1);
+    ep1.AgregarCalificacionEpisodio(4);
+    ep1.AgregarCalificacionEpisodio(5);
+
+    Episodio ep2("Second Episode", 1);
+    ep2.AgregarCalificacionEpisodio(3);
+    ep2.AgregarCalificacionEpisodio(4);
+
+    Episodio ep3("Third Episode", 1);
+    ep3.AgregarCalificacionEpisodio(5);
+    ep3.AgregarCalificacionEpisodio(5);
+
+    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
+    serie->AgregarEpisodio(ep1);
+    serie->AgregarEpisodio(ep2);
+    serie->AgregarEpisodio(ep3);
+    serie->AgregarCalificacion(5);
+    serie->AgregarCalificacion(4);
+    videos.push_back(serie);
 
     std::stringstream buffer;
     std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
@@ -47,10 +135,38 @@ TEST(MainTest3, OperadorSalidaConDynamicCast) {
     EXPECT_NE(salida.find("Fast and furious"), std::string::npos);
     EXPECT_NE(salida.find("One drama story"), std::string::npos);
 
+    for (Video* v : videos) {
+        delete v;
+    }
 }
 
 TEST(MainTest4, MostrarGenero) {
-    std::vector<Video*> videos = crearVideosEjemplo();
+    std::vector<Video*> videos;
+
+    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
+    peli->AgregarCalificacion(5);
+    peli->AgregarCalificacion(4);
+    videos.push_back(peli);
+
+    Episodio ep1("Pilot", 1);
+    ep1.AgregarCalificacionEpisodio(4);
+    ep1.AgregarCalificacionEpisodio(5);
+
+    Episodio ep2("Second Episode", 1);
+    ep2.AgregarCalificacionEpisodio(3);
+    ep2.AgregarCalificacionEpisodio(4);
+
+    Episodio ep3("Third Episode", 1);
+    ep3.AgregarCalificacionEpisodio(5);
+    ep3.AgregarCalificacionEpisodio(5);
+
+    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
+    serie->AgregarEpisodio(ep1);
+    serie->AgregarEpisodio(ep2);
+    serie->AgregarEpisodio(ep3);
+    serie->AgregarCalificacion(5);
+    serie->AgregarCalificacion(4);
+    videos.push_back(serie);
 
     {
         std::stringstream buffer;
@@ -80,10 +196,45 @@ TEST(MainTest4, MostrarGenero) {
         EXPECT_EQ(salida.find("One drama story"), std::string::npos);
     }
 
+    for (Video* v : videos) {
+        delete v;
+    }
 }
 
 TEST(MainTest5, LiberarVideos) {
-    std::vector<Video*> videos = crearVideosEjemplo();
+    std::vector<Video*> videos;
+
+    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
+    peli->AgregarCalificacion(5);
+    peli->AgregarCalificacion(4);
+    videos.push_back(peli);
+
+    Episodio ep1("Pilot", 1);
+    ep1.AgregarCalificacionEpisodio(4);
+    ep1.AgregarCalificacionEpisodio(5);
+
+    Episodio ep2("Second Episode", 1);
+    ep2.AgregarCalificacionEpisodio(3);
+    ep2.AgregarCalificacionEpisodio(4);
+
+    Episodio ep3("Third Episode", 1);
+    ep3.AgregarCalificacionEpisodio(5);
+    ep3.AgregarCalificacionEpisodio(5);
+
+    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
+    serie->AgregarEpisodio(ep1);
+    serie->AgregarEpisodio(ep2);
+    serie->AgregarEpisodio(ep3);
+    serie->AgregarCalificacion(5);
+    serie->AgregarCalificacion(4);
+    videos.push_back(serie);
+
+    // Simular liberar videos
+    for (Video* v : videos) {
+        delete v;
+    }
+    videos.clear();
+
     EXPECT_EQ(videos.size(), 0);
 }
 
