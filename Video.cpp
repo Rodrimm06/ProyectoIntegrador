@@ -19,7 +19,7 @@ duracion(duracion_),genero(genero_){
 	}
 }
 // Funcion para agregar una calificacion al vector
-void Video::agregarCalificacion(int cali) {
+void Video::AgregarCalificacion(int cali) {
 	if (cali > 0 && cali < 6) {
 		calificaciones.push_back(cali);
 	}
@@ -28,7 +28,7 @@ void Video::agregarCalificacion(int cali) {
 	}
 }
 // Funcion para calcular el promedio
-double Video::calcularPromedio() const{
+double Video::CalcularPromedio() const{
 	double promedio=0;
 	// For para recorrer el vector de calificaciones
 	for (int i = 0;i < calificaciones.size();i++) {
@@ -44,27 +44,27 @@ double Video::calcularPromedio() const{
 
 
 // Funciones set/get
-void Video::setId(int id_) {
+void Video::SetId(int id_) {
 	id = id_;
 }
-void Video::setNombre(std::string nom) {
+void Video::SetNombre(std::string nom) {
 	nombre = nom;
 }
-void Video::setDuracion(double dur) {
+void Video::SetDuracion(double dur) {
 	duracion = dur;
 }
-void Video::setGenero(std::string gen) {
+void Video::SetGenero(std::string gen) {
 	genero = gen;
 }
-int Video::getId() const {
+int Video::GetId() const {
 	return id;
 }
-std::string Video::getNombre() const {
+std::string Video::GetNombre() const {
 	return nombre;
 }
-double Video::getDuracion() const {
+double Video::GetDuracion() const {
 	return duracion;
 }
-std::string Video::getGenero() const {
+std::string Video::GetGenero() const {
 	return genero;
 }
