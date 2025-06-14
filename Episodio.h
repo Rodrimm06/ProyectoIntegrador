@@ -20,7 +20,7 @@ public:
     // Constructor
     Episodio(const std::string& nombre_, int temporada_);
     /** 
-    Para ver informacion de los episodios, muestra todo lo necesario y al final calcula el promedio
+    Para ver informacion de los episodios
     */
     void MostrarEpisodio() const;
     /** 
