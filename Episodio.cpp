@@ -50,6 +50,6 @@ double Episodio::calcularPromedioEpisodio() const {
 std::ostream& operator<<(std::ostream& os, const Episodio& episodio) {
     os << "Episodio: " << episodio.nombre << std::endl
         << "Temporada: " << episodio.temporada << std::endl
-        << "Calificacion Promedio: " << episodio.calcularPromedio() << std::endl;
+        << "Calificacion Promedio: " << episodio.calcularPromedioEpisodio() << std::endl;
     return os;
 }
