@@ -36,9 +36,16 @@ public:
     Funcion para agregar una calificacion al vector
     */
     void AgregarCalificacionEpisodio(int cali);
-    // Sobrecarga de operador para mayor eficiencia
+    /** 
+    Sobrecarga de operador para mayor eficiencia
+    */
     friend std::ostream& operator<<(std::ostream& os, const Episodio& episodio);
-    // Getters episodio
+    /**
+    Obtener nombre de episodio
+    */
     std::string getNombre() const { return nombre; }
+    /**
+    Obtener nombre temporada
+    */
     int getTemporada() const { return temporada; }
 };
