@@ -84,7 +84,7 @@ TEST(SerieTest7, ProbarAgregarEpisodio)
 {
     Serie s(5522,"La granja",108,"Misterio");
     Episodio e("El puerco",1);
-    e.agregarCalificacionEpisodio(3);
+    e.AgregarCalificacionEpisodio(3);
     s.agregarEpisodio(e);
     EXPECT_EQ(s.calcularPromedio(),3);
 }
