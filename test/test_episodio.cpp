@@ -54,6 +54,6 @@ TEST(EpisodioTest7, CalcularPromedioConCalificaciones) {
     Episodio ep("Pilot", 1);
     ep.AgregarCalificacionEpisodio(4);
     ep.AgregarCalificacionEpisodio(5);
-    EXPECT_DOUBLE_EQ(ep.calcularPromedioEpisodio(), 4.5);
+    EXPECT_DOUBLE_EQ(ep.CalcularPromedioEpisodio(), 4.5);
 }
 
