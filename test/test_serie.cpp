@@ -109,7 +109,7 @@ TEST(SerieTest9, ProbarOperadorStreamOut) {
     s.AgregarEpisodio(e);
 
     std::stringstream buffer;
-    buffer << s;  // Aquí se usa operator<<
+    buffer << s;  
 
     std::stringstream esperado;
     esperado << "Serie: " << s.GetNombre() << std::endl
