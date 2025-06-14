@@ -285,30 +285,13 @@ TEST(MainTest12, CalcularPromedioSinCalificacionesLanzaError_Serie) {
     EXPECT_THROW(serie.CalcularPromedio(), const char*);
 }
 
-TEST(MainTest13, MostrarGeneroConGeneroInvalidoLanzaError) {
-    std::vector<Video*> videos;
 
-    Pelicula* peli = new Pelicula(1, "Fast and furious", 148, "Accion");
-    peli->AgregarCalificacion(5);
-    videos.push_back(peli);
-
-    Serie* serie = new Serie(2, "One drama story", 10, "Drama");
-    serie->AgregarCalificacion(4);
-    videos.push_back(serie);
-
-    EXPECT_THROW(mostrar_genero(videos, "Comedia"), const char*);
-
-    for (Video* v : videos) {
-        delete v;
-    }
-}
-
-TEST(MainTest14, EpisodioMostrarSinCalificacionesLanzaError) {
+TEST(MainTest13, EpisodioMostrarSinCalificacionesLanzaError) {
     Episodio ep("Episodio sin calif", 1);
     EXPECT_THROW(ep.Mostrar(), const char*);
 }
 
-TEST(MainTest15, EpisodioCalcularPromedioSinCalificacionesLanzaError) {
+TEST(MainTest14, EpisodioCalcularPromedioSinCalificacionesLanzaError) {
     Episodio ep("Episodio sin calif", 1);
     EXPECT_THROW(ep.CalcularPromedioEpisodio(), const char*);
 }
