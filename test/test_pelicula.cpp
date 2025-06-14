@@ -126,8 +126,8 @@ TEST(PeliculaTest14, MostrarCompleto) {
 
     std::stringstream esperado;
     esperado << "Pelicula: "<<p.GetNombre() << std::endl
-             << "Duracion: "<<p.GetDuracion << std::endl
-             << "Genero: " <<p.GetGenero std::endl
+             << "Duracion: "<<p.GetDuracion() << std::endl
+             << "Genero: " <<p.GetGenero()<< std::endl
              << "ID: " <<p.GetId std::endl
              << "Calificacion Promedio: "<<p.CalcularPromedio() std::endl;
 
