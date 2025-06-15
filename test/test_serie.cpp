@@ -192,10 +192,9 @@ TEST(SerieTest14, CalcularPromedioConCalificaciones) {
 TEST(SerieTest15, CoberturaMetodosUsadosEnMostrar) {
     Serie s(1234, "Don Gato", 100, "Drama");
     Episodio e("Episodio1", 1);
-    e.AgregarCalificacionEpisodio(5)
+    e.AgregarCalificacionEpisodio(5);
     s.AgregarEpisodio(e);
 
-    // Redirigir cout a un buffer
     std::stringstream buffer;
     std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
 
@@ -203,8 +202,18 @@ TEST(SerieTest15, CoberturaMetodosUsadosEnMostrar) {
 
     std::cout.rdbuf(oldCout);
 
-    EXPECT_NE(buffer.str().find("Serie: Don Gato"), std::string::npos);
+    std::string salida = buffer.str();
+
+    // Validaciones mínimas para cobertura
+    EXPECT_NE(salida.find("Serie: Don Gato"), std::string::npos);
+    EXPECT_NE(salida.find("Duracion: 100"), std::string::npos);
+    EXPECT_NE(salida.find("Genero: Drama"), std::string::npos);
+    EXPECT_NE(salida.find("ID: 1234"), std::string::npos);
+    EXPECT_NE(salida.find("Calificacion Promedio: 5"), std::string::npos);
+    EXPECT_NE(salida.find("Episodios:"), std::string::npos);
+    EXPECT_NE(salida.find("Episodio1"), std::string::npos);
 }
+
 
 
 
