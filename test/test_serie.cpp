@@ -190,20 +190,22 @@ TEST(SerieTest14, CalcularPromedioConCalificaciones) {
 }
 
 TEST(SerieTest15, CoberturaMetodosUsadosEnMostrar) {
-    Serie s(5678, "Don gato", 45, "Drama");
-
-    Episodio e("Inicio", 1);
-    e.AgregarCalificacionEpisodio(5);
+    Serie s(1234, "Don Gato", 100, "Drama");
+    Episodio e("Episodio1", 1);
+    e.AgregarCalificacionEpisodio(5)
     s.AgregarEpisodio(e);
 
-    EXPECT_EQ(s.GetNombre(), "Don gato");
-    EXPECT_EQ(s.GetDuracion(), 45);
-    EXPECT_EQ(s.GetGenero(), "Drama");
-    EXPECT_EQ(s.GetId(), 5678);
-    EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 5.0);
-    
-    const std::vector<Episodio>& episodios = s.GetEpisodios();
-    ASSERT_EQ(episodios.size(), 1);
-    EXPECT_EQ(episodios[0].GetNombre(), "Inicio");
+    // Redirigir cout a un buffer
+    std::stringstream buffer;
+    std::streambuf* oldCout = std::cout.rdbuf(buffer.rdbuf());
+
+    s.Mostrar();
+
+    std::cout.rdbuf(oldCout);
+
+    EXPECT_NE(buffer.str().find("Serie: Don Gato"), std::string::npos);
 }
+
+
+
 
