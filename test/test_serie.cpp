@@ -188,3 +188,22 @@ TEST(SerieTest14, CalcularPromedioConCalificaciones) {
     s.AgregarCalificacion(4);
     EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 3);
 }
+
+TEST(SerieTest15, CoberturaMetodosUsadosEnMostrar) {
+    Serie s(5678, "Don gato", 45, "Drama");
+
+    Episodio e("Inicio", 1);
+    e.AgregarCalificacionEpisodio(5)
+    s.AgregarEpisodio(e);        // necesario para que CalcularPromedio funcione
+
+    EXPECT_EQ(s.GetNombre(), "Serie Ejemplo");
+    EXPECT_EQ(s.GetDuracion(), 45);
+    EXPECT_EQ(s.GetGenero(), "Acción");
+    EXPECT_EQ(s.GetId(), 5678);
+    EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 5.0);  // promedio de un episodio calificado con 5
+
+    const std::vector<Episodio>& episodios = s.GetEpisodios();
+    ASSERT_EQ(episodios.size(), 1);
+    EXPECT_EQ(episodios[0].GetTitulo(), "Inicio");
+}
+
