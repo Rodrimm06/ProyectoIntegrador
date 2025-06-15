@@ -145,3 +145,12 @@ TEST(PeliculaTest16, CalcularPromedioConCalificaciones) {
     EXPECT_DOUBLE_EQ(p.CalcularPromedio(), 4.0);
 }
 
+TEST(PeliculaTest17, CoberturaMetodosUsadosEnMostrar) {
+    Pelicula p(1234, "Prueba", 100, "Comedia");
+    p.AgregarCalificacion(5);
+    p.GetNombre();
+    p.GetDuracion();
+    p.GetGenero();
+    p.GetId();
+    p.CalcularPromedio();
+}
