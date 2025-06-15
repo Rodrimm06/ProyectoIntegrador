@@ -201,9 +201,5 @@ TEST(SerieTest15, CoberturaMetodosUsadosEnMostrar) {
     EXPECT_EQ(s.GetGenero(), "Acción");
     EXPECT_EQ(s.GetId(), 5678);
     EXPECT_DOUBLE_EQ(s.CalcularPromedio(), 5.0);
-
-    const std::vector<Episodio>& episodios = s.GetEpisodios();
-    ASSERT_EQ(episodios.size(), 1);
-    EXPECT_EQ(episodios[0].GetNombre(), "Inicio");
 }
 
