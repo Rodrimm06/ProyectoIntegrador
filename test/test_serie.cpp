@@ -204,6 +204,6 @@ TEST(SerieTest15, CoberturaMetodosUsadosEnMostrar) {
     
     const std::vector<Episodio>& episodios = s.GetEpisodios();
     ASSERT_EQ(episodios.size(), 1);
-    EXPECT_EQ(episodios[0].GetTitulo(), "Inicio");
+    EXPECT_EQ(episodios[0].GetNombre(), "Inicio");
 }
 
