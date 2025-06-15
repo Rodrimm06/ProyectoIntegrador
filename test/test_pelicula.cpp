@@ -146,7 +146,7 @@ TEST(PeliculaTest16, CalcularPromedioConCalificaciones) {
 }
 
 TEST(PeliculaTest17, CoberturaMetodosUsadosEnMostrar) {
-    Pelicula p(1234, "Prueba", 100, "Comedia");
+    Pelicula p(1234, "La ranita", 100, "Drama");
     p.AgregarCalificacion(5);
     p.GetNombre();
     p.GetDuracion();
